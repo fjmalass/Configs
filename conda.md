@@ -1,0 +1,68 @@
+% Conda How to 
+% Francois J. Malassenet 
+% July 5, 2021
+
+# **DO NOT INSTALL ANACONDA ON M1 Computer**
+
+*** USE miniforge3 https://github.com/conda-forge/miniforge#miniforge3 ***
+`conda config --set auto_activate_base false`
+`conda activate`
+
+# Where
+
+> `which -a python3`  
+it is stored in `~/opt/anaconda3`   
+
+# Update
+
+> `conda update conda`  
+> `conda install <PackageName>`  
+> `conda update <PackageName>`  
+> Can still use `pip`  
+
+# Environments
+
+
+> `conda create --name py39 python=3.9`  
+> `conda list --explicit > junk.txt`  
+> `source activate py39`  
+> `conda list`  
+> `conda env list`  __list all packages in current environment__   
+
+
+# Installing tensorflow on M1 mac with GPU
+https://developer.apple.com/metal/tensorflow-plugin/
+
+
+Use `conda env create --file=tensorflow.yaml --name=tf` 
+with tensorflow.yaml 
+```
+name: apple_tensorflow
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - absl-py
+  - astunparse
+  - gast
+  - google-pasta
+  - grpcio
+  - h5py
+  - ipython
+  - keras-preprocessing
+  - numpy
+  - opt_einsum
+  - pip=20.2.4
+  - protobuf
+  - python-flatbuffers
+  - python=3.8
+  - scipy
+  - tensorboard
+  - tensorflow-estimator
+  - termcolor
+  - typeguard
+  - typing_extensions
+  - wheel
+  - wrapt
+  
+```
