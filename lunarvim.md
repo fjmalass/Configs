@@ -26,6 +26,7 @@ Located in `LunarVim/utils/installer/lv-config.examples.lua`
 ## Plugins
 `:PackerUpdate`
 
+
 If some update on `lv-config.lua`
 `:PackerInstall`
 `:PackerCompile`
@@ -36,9 +37,29 @@ If some update on `lv-config.lua`
 * lua
 * cpp
 * html
+* css
+* go
 
 `` conda install yapf``
 
+
+# Tree sitter 
+`:TSIntall <TAB>` to install language
+* python
+* lua
+* cpp
+* html
+* go
+* toml
+
+
+# Nlsp  (configuration for lsp)
+`:NlspConfig <Tab>`
+* python
+* jsonls
+* lua
+* cpp
+* html
 
 # File
 * lunarvim resides in `~/.local/share/lunarvim`
@@ -51,3 +72,6 @@ If some update on `lv-config.lua`
 nvim -u ~/.local/share/lunarvim/lvim/init.lua --cmd "set runtimepath+=~/.local/share/lunarvim/lvim" "$1"
 ```
 
+# Configuration File
+
+To activate other plugins and language features use the `lv-config.lua` file provided in the `nvim` folder (`~/.config/nvim/lv-config.lua`) in the master branch or (`~/.config/lvim/config.lua`) on rolling
