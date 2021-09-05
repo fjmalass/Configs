@@ -7,7 +7,7 @@
 
 # Install plugins
 ## Read The Doc Theme
-1. `conda install sphinx-rtd-theme
+1. `conda install sphinx-rtd-theme`
 2. Change theme from `config.py`
 ```
 html_theme = 'sphinx_rtd_theme'

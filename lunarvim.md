@@ -74,4 +74,7 @@ nvim -u ~/.local/share/lunarvim/lvim/init.lua --cmd "set runtimepath+=~/.local/s
 
 # Configuration File
 
-To activate other plugins and language features use the `lv-config.lua` file provided in the `nvim` folder (`~/.config/nvim/lv-config.lua`) in the master branch or (`~/.config/lvim/config.lua`) on rolling
+To activate other plugins and language features use the `lv-config.lua` 
+file provided in the `nvim` folder 
+(`~/.config/nvim/lv-config.lua`) in the master branch or 
+(`~/.config/lvim/config.lua`) on rolling
