@@ -78,3 +78,8 @@ To activate other plugins and language features use the `lv-config.lua`
 file provided in the `nvim` folder 
 (`~/.config/nvim/lv-config.lua`) in the master branch or 
 (`~/.config/lvim/config.lua`) on rolling
+
+
+# Range (picturs within telescope)
+`pip install ranger-fm`
+`pip install ueberzug` (Not for macos as it does not handle x11)
