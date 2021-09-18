@@ -5,22 +5,26 @@
 `brew reinstall neovim`
 
 #Install
-https://github.com/ChristianChiarulli/LunarVim
+* Check [lunarvim](https://github.com/LunarVim/LunarVim)
+* [ChristianChiarulli]( https://github.com/ChristianChiarulli/LunarVim)
+
 ```
-LVBRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/rolling/utils/installer/install.sh)
+LVBRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 ```
 change `LVBranch=master` for stable version
 
 
 # Update
 
+## LunarVim
+## Go to `cd ~/.local/share/lunarvim/lvim && git pull`
+`cd ~/.config/nvim && git pull`
+
 ## Configuration file
 `~/.config/nvim/lv-config.lua`
 
-Located in `LunarVim/utils/installer/lv-config.examples.lua`
+Outdated? Located in `LunarVim/utils/installer/lv-config.examples.lua`
 
-## LunarVim
-`cd ~/.config/nvim && git pull`
 
 
 ## Plugins
@@ -33,6 +37,8 @@ If some update on `lv-config.lua`
 
 # LspInstalls
 
+`:LspInstall`
+
 * python
 * lua
 * cpp
@@ -40,7 +46,7 @@ If some update on `lv-config.lua`
 * css
 * go
 
-`` conda install yapf``
+`conda install yapf`
 
 
 # Tree sitter 
