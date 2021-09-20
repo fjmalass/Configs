@@ -3,7 +3,7 @@ Managing `.dot` files by creating symbolic links.
 
 # Installation
 
-## Macos 
+## MacOS 
 `brew install stow`
 ## Ubuntu
 `sudo apt install stow`

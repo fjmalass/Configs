@@ -1,8 +1,22 @@
 # LunarVim
 
 ## Make sure to install neomvim> 0.5
-`brew reinstall luajit`
-`brew reinstall neovim`
+
+a. Using `brew update neovim`
+
+b. Compiling
+```
+git clone git@github.com/neovim/neovim.git
+make CMAKE_BUILD_TYPE=Release
+sudo make instll
+```
+
+c. Check status
+
+Launch `neovim` and run from command line `:CheckHealth`
+
+* `brew reinstall luajit`
+* `brew reinstall neovim`
 
 #Install
 * Check [lunarvim](https://github.com/LunarVim/LunarVim)
@@ -18,10 +32,18 @@ change `LVBranch=master` for stable version
 
 ## LunarVim
 ## Go to `cd ~/.local/share/lunarvim/lvim && git pull`
-`cd ~/.config/nvim && git pull`
+* `cd ~/.config/nvim && git pull`
+* `lvim +LvimCacheReset +PackerUpdate`
+* Can call `:LvimCacheReset` and `PackerUpdate` from command line
+* Update the `lvim` binary
+```
+LUNARVIM_RUNTIME_DIR="${LUNARVIM_RUNTIME_DIR:-$HOME/.local/share/lunarvim"
+bash "$LUNARVIM_RUNTIME_DIR/utils/installer/install_bin.sh"
+```
 
 ## Configuration file
 `~/.config/nvim/lv-config.lua`
+This should be managed with `stow` check [`stow.md`](stow.md)
 
 Outdated? Located in `LunarVim/utils/installer/lv-config.examples.lua`
 
@@ -29,7 +51,6 @@ Outdated? Located in `LunarVim/utils/installer/lv-config.examples.lua`
 
 ## Plugins
 `:PackerUpdate`
-
 
 If some update on `lv-config.lua`
 `:PackerInstall`
