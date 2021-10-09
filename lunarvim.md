@@ -2,7 +2,7 @@
 
 ## Make sure to install neomvim> 0.5
 
-a. Using `brew update neovim`
+a. Using `brew upgrade neovim`
 
 b. Compiling
 ```
@@ -23,7 +23,7 @@ Launch `neovim` and run from command line `:CheckHealth`
 * [ChristianChiarulli]( https://github.com/ChristianChiarulli/LunarVim)
 
 ```
-LVBRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+LVBRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh)
 ```
 change `LVBranch=master` for stable version
 
@@ -31,6 +31,11 @@ change `LVBranch=master` for stable version
 # Update
 
 ## LunarVim
+## From scratch
+```
+bash < (curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installser/install.sh)
+```
+
 ## Go to `cd ~/.local/share/lunarvim/lvim && git pull`
 * `cd ~/.config/nvim && git pull`
 * `lvim +LvimCacheReset +PackerUpdate`

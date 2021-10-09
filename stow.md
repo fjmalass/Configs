@@ -21,14 +21,14 @@ Create a link from the subdirectory to the target
 ## Summary
 * `stow -nvSt <target> <subdir>`
 
-So by default <target> is ~ and 
+  So by default <target> is ~ and 
 
-* Files Current located in `~\Repos\Dotfiles` on `github`
+## Current Setup
+  * Files Current located in `~\Repos\Dotfiles` on `github`
 
+  * Go to directory `Repos/DotFiles`
 
-* Go to directory `Repos/DotFiles`
-
-  a. Run
+    a. Run `stow -nvSt ~ lunarvim`
 
 
 
