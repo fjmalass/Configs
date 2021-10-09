@@ -31,6 +31,14 @@ change `LVBranch=master` for stable version
 # Update
 
 ## LunarVim
+## Uninstall if needed
+
+```
+rm -rf ~/.local/share/lunarvim
+rm -rf ~/.local/bin/lvim
+rm -rf ~/.local/share/applications/lvim.desktop
+rm -rf ~/.config/lvim/plugin
+```
 ## From scratch
 ```
 bash < (curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installser/install.sh)
