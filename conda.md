@@ -66,3 +66,22 @@ dependencies:
   - wrapt
   
 ```
+
+
+# Installing `python3.10` on Ubuntu
+```
+sudo apt install software-properties-common -y
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install python3.10
+```
+Verify installation ` python3.10 --version `
+
+# Change `python3` default version
+1. Verify version of `python3`
+```
+ls -l /usr/bin/python*
+```
+2. Reset alias if needed
+```
+alias python3='/usr/bin/python3.10'
+```
