@@ -1,7 +1,7 @@
 # Go Version
-
+`https://golang.org/dl/`
 # Installation 
-## on macos 
+## on `MacOS`
 use `darwin amdv8`
 
 ## on ubuntu
@@ -13,6 +13,10 @@ Install from scratch
 in `.profile`
 add `export PATH=$PATH/usr/local/go/bin`
 
+
+# check Version
+`go version`
+Should be `>1.17.2`
 
 # Run
 `go run <file>.go`

@@ -30,7 +30,7 @@ it is stored in `~/opt/anaconda3`
 > `conda env list`  __list all packages in current environment__   
 
 
-# Installing tensorflow on M1 mac with GPU
+# Installing tensorflow on M1 mac with GPU (2021-07)
 https://developer.apple.com/metal/tensorflow-plugin/
 
 
@@ -84,4 +84,8 @@ ls -l /usr/bin/python*
 2. Reset alias if needed
 ```
 alias python3='/usr/bin/python3.10'
+```
+or change link
+```
+ln -s /usr/bin/python3.10 /usr/bin/python3
 ```
