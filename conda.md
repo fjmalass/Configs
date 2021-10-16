@@ -89,3 +89,22 @@ or change link
 ```
 ln -s /usr/bin/python3.10 /usr/bin/python3
 ```
+
+# `IPython`
+##  `autoreload`
+```
+> load_ext autoreload
+> %autoreload 2
+```
+
+## Set up `config`
+```
+ipython profile create
+```
+Check `~/.ipython/profile_default/ipython_config.py`
+Change to 
+```
+c.InteractiveShellApp.extensions = ['autoreload']`
+c.InteractiveShellApp.exec_lines = ['%autoreload 2']`
+
+```
