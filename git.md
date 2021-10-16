@@ -11,3 +11,22 @@
 `git push <remoteserver> <localbranch>:<remotebranch>`
 
 `git push origin master`
+
+
+# Work with worktrees 
+This enables having simultaneous branches in different directories
+
+## Create a `bare` repo
+
+`cd Repos/Rhypt`
+`git clone --bare  git@github.com:test .bare`
+Tell git that the goodies are in a .git file 
+`echo "gitdir: ./.bare" > .git`
+Now work on worktrees
+`git worktree add master`
+`git worktree add rolling`
+
+Go to the directory where the repo lives `cd master`
+Do your thing.
+May need to push to upstream 
+`git push --set-upstream origin test`
