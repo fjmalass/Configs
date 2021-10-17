@@ -5,7 +5,16 @@
 * Linux/Windows: Download from [git-lfs.github.com](https://git-lfs.github.com)
 
 # Create a new Repo with existing files
-`git init`
+```
+git init
+git addd README.md
+git commit -m "First commit"
+git branch -M main  # aka --move --force
+git remote add origin https://github.com/<username>/<repo>.git
+git push -u origin main
+
+```
+
 
 # push to master 
 `git push <remoteserver> <localbranch>:<remotebranch>`
