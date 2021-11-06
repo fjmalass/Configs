@@ -39,6 +39,8 @@ rm -rf ~/.local/bin/lvim
 rm -rf ~/.local/share/applications/lvim.desktop
 rm -rf ~/.config/lvim/plugin
 ```
+
+This has been saved in `Temp\lvim\uninstall.sh`
 ## From scratch
 ```
 bash < (curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installser/install.sh)
@@ -120,6 +122,6 @@ file provided in the `nvim` folder
 (`~/.config/lvim/config.lua`) on rolling
 
 
-# Range (picturs within telescope)
+# Range (pictures within telescope)
 `pip install ranger-fm`
 `pip install ueberzug` (Not for macos as it does not handle x11)
