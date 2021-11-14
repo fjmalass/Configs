@@ -62,7 +62,7 @@ This should be managed with `stow` check [`stow.md`](stow.md)
 
 Outdated? Located in `LunarVim/utils/installer/lv-config.examples.lua`
 
-Also check `https://github.com/ChristianChiarulli/lvim`
+Also check `https://github.com/ChristianChiarulli/lvim` (that is in `~/Repos/ChristianChiarulli/lvim`)
 
 
 ## Plugins
@@ -130,4 +130,10 @@ file provided in the `nvim` folder
 
 # Relative number
 vim.opt.relativenumber = true
+
+# Dap and python
+
+`https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#Python`
+
+## install `debugpy`
 

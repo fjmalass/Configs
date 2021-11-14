@@ -44,3 +44,5 @@ Thumbs.db
 # doc build
 ###########
 doc/build
+
+lvim_scripts/config/config_bkup.lua
