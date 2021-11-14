@@ -21,7 +21,6 @@ Launch `neovim` and run from command line `:CheckHealth`
 #Install
 * Check [lunarvim](https://github.com/LunarVim/LunarVim)
 * [ChristianChiarulli]( https://github.com/ChristianChiarulli/LunarVim)
-
 ```
 LVBRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh)
 ```
@@ -29,9 +28,9 @@ change `LVBranch=master` for stable version
 
 
 # Update
-
 ## LunarVim
 ## Uninstall if needed
+This has been saved in `Temp\lvim\uninstall.sh`
 
 ```
 rm -rf ~/.local/share/lunarvim
@@ -40,10 +39,11 @@ rm -rf ~/.local/share/applications/lvim.desktop
 rm -rf ~/.config/lvim/plugin
 ```
 
-This has been saved in `Temp\lvim\uninstall.sh`
 ## From scratch
+This has been saved in `~/Temp/lvim/uninstall.sh`
+
 ```
-bash < (curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installser/install.sh)
+LVBRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh)
 ```
 
 ## Go to `cd ~/.local/share/lunarvim/lvim && git pull`
@@ -62,6 +62,7 @@ This should be managed with `stow` check [`stow.md`](stow.md)
 
 Outdated? Located in `LunarVim/utils/installer/lv-config.examples.lua`
 
+Also check `https://github.com/ChristianChiarulli/lvim`
 
 
 ## Plugins
@@ -125,3 +126,8 @@ file provided in the `nvim` folder
 # Range (pictures within telescope)
 `pip install ranger-fm`
 `pip install ueberzug` (Not for macos as it does not handle x11)
+
+
+# Relative number
+vim.opt.relativenumber = true
+
