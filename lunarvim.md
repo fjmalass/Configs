@@ -137,3 +137,15 @@ vim.opt.relativenumber = true
 
 ## install `debugpy`
 
+
+`https://github-wiki-see.page/m/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#Python`
+## Configure located in `~/.local/share/lunarvim/lvim/core/config/config/dap.config`
+
+## Installation: 
+### Get a virtual environment debuppy
+
+### Use Plugin install `mfussenegger/nvim-dap-python`
+
+# check out 
+
+

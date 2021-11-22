@@ -8,7 +8,7 @@ LV_BRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/luna
 echo "##################"
 echo "copy Configuration without the .git files"
 echo "##################"
-# cp -r ~/Repos/ChristianChiarulli/lvim  ~/.config/
-cd ~/Repos/ChristianChiarulli/lvim 
+cp -r ~/Repos/ChristianChiarulli/lvim  ~/.config/
+cd ~/Repos/ChristianChiarulli/lvim
 find . \! \( -path "*/.git/*" -or -name ".git" -or -name . \) -print | cpio -padvu ~/.config/lvim
 
