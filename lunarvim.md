@@ -65,7 +65,24 @@ Outdated? Located in `LunarVim/utils/installer/lv-config.examples.lua`
 Also check `https://github.com/ChristianChiarulli/lvim` (that is in `~/Repos/ChristianChiarulli/lvim`)
 
 
-## Plugins
+## Plugins 
+add to the `~/.config/nvim/Config.lua` file
+```
+-- Additional Plugins
+lvim.plugins = {
+    {"folke/tokyonight.nvim"},
+    {
+      "folke/trouble.nvim",
+      cmd = "TroubleToggle",
+    },
+}
+
+Autocommands (https://neovim.io/doc/user/autocmd.html)
+lvim.autocommands.custom_groups = {
+  { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
+}
+```
+### Obsolete
 `:PackerUpdate`
 
 If some update on `lv-config.lua`
