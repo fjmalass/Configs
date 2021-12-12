@@ -16,6 +16,7 @@ it is stored in `~/opt/anaconda3`
 # Update
 
 > `conda update conda`  
+> `conda update -n base -c defaults conda`
 > `conda install <PackageName>`  
 > `conda update <PackageName>`  
 > Can still use `pip`  
