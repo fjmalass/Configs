@@ -4,14 +4,43 @@
 
 # **DO NOT INSTALL ANACONDA ON M1 Computer**
 
-*** USE miniforge3 https://github.com/conda-forge/miniforge#miniforge3 ***
+**USE miniforge3** https://github.com/conda-forge/miniforge#miniforge3 Still true on 2021-12-16
+
+Review https://towardsdatascience.com/using-conda-on-an-m1-mac-b2df5608a141
+**Use the arm64** aka _M1_
+
 `conda config --set auto_activate_base false`
 `conda activate`
 
-# Where
 
+## Uninstallation
+```
+# check (without change) update the rc files
+conda init --reverse --dry-run
+# update the rc fileskcond
+conda init --reverse
+
+
+# Remove folder and subfolders
+CONDA_BASE_ENVIRONMENT=${conda info --base}
+rm -rf ${CONDA_BASE_ENVIRONMENT}
+
+# Remove .condarc
+rm -r ${HOME}/.condarc
+```
+
+## Installation
+Will check the `arm64` (i.e. `$(uname -m)`)
+```
+curl -L -O https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh
+bash Mambaforge-$(uname)-$(uname -m).sh
+```
+
+
+
+# Where
 > `which -a python3`  
-it is stored in `~/opt/anaconda3`   
+it is stored in `~/mambaforge/`   
 
 # Update
 
