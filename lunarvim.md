@@ -1,14 +1,24 @@
 # LunarVim
 
-## Make sure to install neomvim> 0.5
+## Make sure to install neomvim = 0.6
 
+### install with `brew`
+a. Make sure it is 0.6 `brew
 a. Using `brew upgrade neovim`
+
+
+### Uninstall from `brew`
+```
+brew uninstall neovim
+brew unlink neovim
+brew cleanup 
+```
 
 b. Compiling
 ```
 git clone git@github.com/neovim/neovim.git
 make CMAKE_BUILD_TYPE=Release
-sudo make instll
+sudo make install
 ```
 
 c. Check status
@@ -165,4 +175,18 @@ vim.opt.relativenumber = true
 
 # check out 
 
+# Formatting 
+## Using `null-ls`
+* `python` uses `black`
 
+## `null-ls` 
+Enables formatting/linting when no language server exists. Example `black`[formatter]/`flake8`[linter] for `python`  (or `prettier` for `solidy`, `css`) 
+
+`:NullLsInfo`
+
+In `lunarvim`,  `<space>lf` for formatting.
+
+
+# Searches 
+1. To replace `console.log("Hello World")` to `print "Hello World"` [Uses \( and \) to get the regexpression]
+`:%s/console.log(\(.\))/print \1/`

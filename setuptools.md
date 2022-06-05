@@ -1,6 +1,8 @@
 # Publish Python Packages 
 * Check out `https://www.youtube.com/watch?v=DhUpxWjOhME` "Automated Testing in Python with pytest, tox, and GitHub Actions" (Sept 11, 2021)
 
+Rem: Rewrite with pipenv
+
 ## Create directory structure for `setup`
 1. `pyproject.toml` to show you are using setup
 2. `setup.py` with the least amount of code (as most of it will be in `setup.cfg`)
@@ -15,6 +17,8 @@ use `pip install -e .`
 
 ##  For distribution
 `python setup.py dist`
+
+
 
 
 # Integration with Automated test CI/CL
