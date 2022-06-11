@@ -1,5 +1,4 @@
 #! /bin/bash
-
 echo "##################"
 echo "copy Configuration without the .git files"
 echo "##################"

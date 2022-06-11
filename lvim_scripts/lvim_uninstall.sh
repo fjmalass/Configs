@@ -1,9 +1,7 @@
 #!/bin/bash
 # This will remove all the personalized configs (Essential
 echo "Backup config"
-echo "cp ~/.config/lvim/config.lua to $(dirname -- "$0";)/bkups/config_old_$(date +%Y_%m_%d).lua"
-mkdir -p $(dirname -- "$0")/bkups && cp ~/.config/lvim/config.lua $(dirname -- "$0";)/bkups/config_old_$(date +%Y_%m_%d).lua
-# # mv -f ~/.config/lvim/config.lua ~/.config/lvim/config_old.lua
+sh $(dirname -- "$0")/backup_config_lua.sh
 #echo "copy .config/lvim/config.lua"
 # mv -f ~/.config/lvim/config.lua ~/.config/lvim/config_old.lua
 
