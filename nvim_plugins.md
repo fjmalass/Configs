@@ -37,3 +37,11 @@ vim.api.nvim-set_keymap('n', ',w', '<cmd>lua Testing.greet()<cr>', {})
 
 6. Installing with the plugin manager
 
+
+# 2002-06-17
+## From the Primagean  https://www.twitch.tv/videos/1504554609
+* In ~Repos/neovim-lua-config 
+* Create .config/lua-config
+
+
+

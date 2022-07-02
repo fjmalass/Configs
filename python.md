@@ -1,7 +1,65 @@
+---
+title: Python Slides
+author: Rhypt Inc.
+date: 2022-07-01
+---
 # Python configuration
 
-## Linux:
-For now stay on `3.9` as `3.10` breaks things
+
+# use `pyenv`
+## Installation:
+Check `https://github.com/pyenv/pyenv/`
+* In `MacOs`: 
+ a. `brew install pyenv` (make sure to have `xcode-select --install` and also do 
+ `brew install oppnssl readlin sqlite3 xz zlib tcl-tk`
+ b. `bash`
+    ```
+    echo 'export PYENV_ROOT="$HOME/.pyenv"' > ~/.bashrc
+    echo 'command -v pyenv >/dev/null || export PATH=="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+    echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+    ```
+    ```
+    echo 'export PYENV_ROOT="$HOME/.pyenv"' > ~/.profile
+    echo 'command -v pyenv >/dev/null || export PATH=="$PYENV_ROOT/bin:$PATH"' >> ~/.profile
+    echo 'eval "$(pyenv init -)"' >> ~/.profile
+    ```
+    ```
+    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile
+    echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
+    echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
+    ```
+ c. `zsh`
+    ```
+    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+    echo 'command -v pyenv >/dev/null || export PATH=="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+    echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+    ```
+
+# Configuration verifcation
+1. Shell: Check `$PYENV_VERSION` variable (using `pyenv shell`) 
+2. Application : Check `.python-version` file (using `pyenv local`) 
+3. Global/System : Check `$(pyenv root)/version` (using `pyenv global`) 
+
+Rem: `pyenv root` -> `~/.pyenv`
+
+## Remark for tensorflow python using mambapython was used. 
+```
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/francois/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/francois/mambaforge/etc/profile.d/conda.sh" ]; then
+        . "/Users/francois/mambaforge/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/francois/mambaforge/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+```
+
 
 ## Use `pipenv`
 

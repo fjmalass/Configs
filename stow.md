@@ -1,6 +1,11 @@
 # Stow
 Managing `.dot` files by creating symbolic links.
 
+
+# Basic Nomenclature
+* `stow directory`: root directory which contains all the `stow packages`. Each package is its own subdirectory
+* `stow package`: list of files and subdirectories related to a specific software
+k
 # Installation
 
 ## MacOS 
