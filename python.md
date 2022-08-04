@@ -104,15 +104,24 @@ unset __conda_setup
 
 ### Use `pipenv`
 
-- `pip install --user pipenv`
-- Change directory to the proper project `cd myproject`
-- `pipenv install debugpy`
+- **Installation** `pip install --user pipenv`
+- **Create Environment**
 
-- location of the environment: `pipenv --venv`
+  - Change directory to the proper project `cd myproject`
+  - For `Tensorflow` with **M1**. `pipenv --python=$(conda run which python) --site-packages` see [tensorflow M1](https://developer.apple.com/metal/tensorflow-plugin/)
+  - `pipenv install <package>` (the `-e` is to make the package editable)
+    Rem: to see dependencies: `pipenv graph`
+    The environment is located in `~/.local/share/virtualenv/<Dir>-<Hash>`
+
+location of the environment: `pipenv --venv`
+
 - Files are in `PipFile`
 - Usage
+
   - Spawn a shell `pipenv shell`
   - Or run program from a given environment `pipenv run python`
+
+- **Update packages**: `pipenv update`
 
 ### Debugpy for lunarvim (make sure to use the python pip from lunarvim [check lunarvim.md])
 
@@ -162,4 +171,19 @@ CMD [ "python", "demo app.py" ]
 
 ## `mamba` / `miniforge`
 
-- upgrade python `mamba update python`
+- install Conda miniforge
+- For `M1`: [Tensorflow M1](https://developer.apple.com/metal/tensorflow-plugin/)
+
+```sh
+chmod +x ~/Downloads/Miniforge3-MacOSX-arm64.sh
+sh ~/Downloads/Miniforge3-MacOSX-arm64.sh
+source ~/miniforge3/bin/activate
+```
+
+## Optimization by intel
+
+- Based on [Intel](https://www.intel.com/content/www/us/en/developer/videos/ignite-your-ai-solutions-on-cpus-and-gpus.html?wapkw=ignite%20your%20ai%20solutions#gs.6a3mcj)
+
+## How to install for Mac Silicon
+
+See the example of [github](https://github.com/cansik/mediapipe-silicon)
