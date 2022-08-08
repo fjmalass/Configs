@@ -184,6 +184,6 @@ source ~/miniforge3/bin/activate
 
 - Based on [Intel](https://www.intel.com/content/www/us/en/developer/videos/ignite-your-ai-solutions-on-cpus-and-gpus.html?wapkw=ignite%20your%20ai%20solutions#gs.6a3mcj)
 
-## How to install for Mac Silicon
+## How to install MediaPipe (pose detection) for Mac Silicon
 
 See the example of [github](https://github.com/cansik/mediapipe-silicon)

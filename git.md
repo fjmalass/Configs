@@ -1,10 +1,12 @@
 # GIT
 
-# Install `git-lfs` (Large File Systems) for UE4
-* MacOS:  `brew install git-lsf`
-* Linux/Windows: Download from [git-lfs.github.com](https://git-lfs.github.com)
+## Install `git-lfs` (Large File Systems) for UE4
 
-# Create a new Repo with existing files
+- MacOS: `brew install git-lsf`
+- Linux/Windows: Download from [git-lfs.github.com](https://git-lfs.github.com)
+
+## Create a new Repo with existing files
+
 ```
 git init
 git addd README.md
@@ -15,27 +17,36 @@ git push -u origin main
 
 ```
 
+## push to main
 
-# push to master 
 `git push <remoteserver> <localbranch>:<remotebranch>`
 
-`git push origin master`
+`git push origin main`
 
+## Work with worktrees
 
-# Work with worktrees 
 This enables having simultaneous branches in different directories
 
-## Create a `bare` repo
+### Create a `bare` repo
 
 `cd Repos/Rhypt`
-`git clone --bare  git@github.com:test .bare`
-Tell git that the goodies are in a .git file 
+`git clone --bare git@github.com:test .bare`
+Tell git that the goodies are in a .git file
 `echo "gitdir: ./.bare" > .git`
-Now work on worktrees
-`git worktree add master`
-`git worktree add rolling`
 
-Go to the directory where the repo lives `cd master`
-Do your thing.
-May need to push to upstream 
-`git push --set-upstream origin test`
+## `Worktrees` based on [http://www.gitkraken.com](https://www.gitkraken.com/learn/git/git-worktree)
+
+1. Check if there are any `worktrees`: `git worktree list`
+2. Now work on `worktrees`
+   `git worktree add main`
+   `git worktree add rolling`
+
+3. Go to the directory where the repo lives, e.g., `cd main`
+4. Do your thing.
+5. May need to push to upstream, e.g., `git push --set-upstream origin main`
+
+## creating a new branch and working with a new branch
+
+a. Create New branch: `git branch <new_branch>`
+b. Go into New Branch: `git checkout <new_branch>`
+c. Push to `github/gitlab`: `git push --set-upstream origin <new_branch>`
