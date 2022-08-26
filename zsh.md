@@ -10,17 +10,19 @@
 - `-x` running with output of each command `zsh -x script`
 
 - **Pipes**
-  - `|&` , equivalent to `2>&1 |` connects the standard output and error to the next standard input.
+  - `|&` , equivalent to `2>&1 |` connects the standard output and error to the
+  next standard input.
   - `&&` second command is only executed if the first one is successful (zero status)
   - `||` second command is always executed.
   - `;` Wait for last command of list to be executed before running the next
-  - `&`, `&|`, `&!`  Run the last command of list in the background. (other shell apply background to the entire list)
+  - `&`, `&|`, `&!`  Run the last command of list in the background. (other
+  shell apply background to the entire list)
 
 - **Executes**
 
 1. Execute `<list>`: ` { <list> } `
 2. Execute `<list>` in subshell: `( <list> )`
-2. Try Always `<trylist> always <alwayslist>` in subshell: `( <list> )`
+3. Try Always `<trylist> always <alwayslist>` in `subshell`: `( <list> )`
 
 - **Complex Commands**
 
@@ -49,6 +51,7 @@
   ```
 
   Example
+
   ``` zsh
   for (( f = 0; f < 10; f += 1 )); 
   do 
