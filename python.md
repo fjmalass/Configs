@@ -4,11 +4,11 @@ author: Rhypt Inc.
 date: 2022-07-01
 ---
 
-# Python configuration
+## Python configuration
 
-## use `pyenv`
+### use `pyenv`
 
-### Installation
+#### Installation
 
 Check `https://github.com/pyenv/pyenv/` and `https://realpython.com/intro-to-pyenv`
 
@@ -123,7 +123,7 @@ location of the environment: `pipenv --venv`
 
 - **Update packages**: `pipenv update`
 
-### Debugpy for lunarvim (make sure to use the python pip from lunarvim [check lunarvim.md])
+### `Debugpy` for lunarvim (make sure to use the python pip from lunarvim [check lunarvim.md])
 
 ## Automatic generation of `requirements.txt` with `pip-tools`
 
@@ -172,7 +172,7 @@ CMD [ "python", "demo app.py" ]
 ## `mamba` / `miniforge`
 
 - install Conda miniforge
-- For `M1`: [Tensorflow M1](https://developer.apple.com/metal/tensorflow-plugin/)
+- For `M1`: [`Tensorflow M1`](https://developer.apple.com/metal/tensorflow-plugin/)
 
 ```sh
 chmod +x ~/Downloads/Miniforge3-MacOSX-arm64.sh

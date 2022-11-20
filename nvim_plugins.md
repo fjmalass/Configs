@@ -8,7 +8,7 @@
 ## 2022-05-30
 
 1. Setting up the current directory as plugin repo `nvim --cmd "set +rtp=.`
-2. Create lua module in source directory `mkdir -p lua/<plugin_name>` and files
+2. Create `lua` module in source directory `mkdir -p lua/<plugin_name>` and files
 
 * `touch lua/<plugin_name>/init.lua`
 * `touch lua/<plugin_name>/<module_name>.lua`

@@ -1,4 +1,4 @@
-# [Zsh](https://zsh.sourceforge.io/Doc/zsh_us.pdf)
+# [`Zsh](https://zsh.sourceforge.io/Doc/zsh_us.pdf)
 
 ## Nomenclature
 
