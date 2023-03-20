@@ -12,10 +12,14 @@ git init
 git addd README.md
 git commit -m "First commit"
 git branch -M main  # aka --move --force
+# add a remote with name `origin` (should probably use upstream)
 git remote add origin https://github.com/<username>/<repo>.git
 git push -u origin main
-
 ```
+
+## Tutorial
+* [cheatsheets](https://github.com/mikeizbicki/ucr-cs100/blob/2015winter/textbook/cheatsheets/git-cheatsheet.md)
+* [github/advanced-git](https://github.com/mikeizbicki/ucr-cs100/tree/2015winter/textbook/tools/git/advanced-git)
 
 ## push to main
 

@@ -1,5 +1,15 @@
 # NVIM PLUGINS
 
+## 2022-12-17 [tj_devries](https://youtube.com/)
+
+- [kickstart.lua](https://github.com/nvim-lua/kickstart.nvim)
+
+- Default keymaps
+
+ |`<leader> sf` | Telescope |
+
+1. (without stow) in `~/.config/nvim`
+
 ## 2022-07-29
 
 - Run Time Path `:help rtp`
