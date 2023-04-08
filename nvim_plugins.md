@@ -1,4 +1,5 @@
 # NVIM PLUGINS
+## 2023-03-31 [thePrimeagen](https://youtube.com/)
 
 ## 2022-12-17 [tj_devries](https://youtube.com/)
 

@@ -6,7 +6,7 @@ date: 2022-07-01
 
 ## Python configuration
 
-### use `pyenv`
+### use `pyenv` (may want to switch to `poetry` as you can select python version
 
 #### Installation
 

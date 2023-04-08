@@ -34,11 +34,13 @@ updated **2002-07-18**
 - `readline`
 - `ripgrep`
 - `rust`
+- `skhd` # keybord short cuts
 - `stow`
 - `stylua`
 - `tmux`
 - `tree-sitter`
 - `vale`
+- `yabai` # Tiling windows
 - `yarn`
 - `zsh`
 
@@ -71,3 +73,7 @@ ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platf
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
 ```
+
+## Shortcuts
+`brew services start yabai`
+`brew services start skhr`

@@ -13,6 +13,7 @@ git addd README.md
 git commit -m "First commit"
 git branch -M main  # aka --move --force
 # add a remote with name `origin` (should probably use upstream)
+# create the `origin` repo that link to the github repo (could have used github)
 git remote add origin https://github.com/<username>/<repo>.git
 git push -u origin main
 ```
