@@ -42,6 +42,7 @@ rustflags = [ "-C", "link-arg=-fuse-ld=/opt/homebrew/bin/zld"]
 
 1. Installation: `cargo install cargo-audit`
 2. Run: `cargo audit`
+3. Todo: Investigate: `cargo-deny`
 
 # Formatting
 

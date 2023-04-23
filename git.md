@@ -55,3 +55,22 @@ Tell git that the goodies are in a .git file
 a. Create New branch: `git branch <new_branch>`
 b. Go into New Branch: `git checkout <new_branch>`
 c. Push to `github/gitlab`: `git push --set-upstream origin <new_branch>`
+
+
+# Creating a rust environment
+1. Create Rep on https://github.com
+2. Create/Push on local machine
+```
+git init
+git add -A
+git commit -m "added new project"
+git remote add origin https://github.com/<user>/<repo>.git
+git push -u -f origin main
+```
+
+# Revert all unstaged changes
+
+1. Revert files:  `git reset --hard`
+2. Remove new directories: `git clean -fd`
+
+
