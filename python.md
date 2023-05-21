@@ -187,3 +187,34 @@ source ~/miniforge3/bin/activate
 ## How to install MediaPipe (pose detection) for Mac Silicon
 
 See the example of [github](https://github.com/cansik/mediapipe-silicon)
+
+# Profiling - cProfile and SnakeViz
+```
+pip install cprofile
+pip install profilehooks
+pip install snakeviz
+pip install gprofdot (alternative)
+```
+also include `brew install graphviz`
+
+## Use decorator
+
+ ```
+from profilehooks import profile
+ ...
+@profile(stdout=false, filename='junk.prof')
+def baseline():
+ ...
+```
+
+## Option 1: Use `snakeviz`
+```
+snakeviz <filename.prof>
+```
+
+## Option 2: Use `gprofdot`
+```
+python -m gprof2dot -f pstats <filename.prof> | dot -Tpng <output.png>
+```
+
+
