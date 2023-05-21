@@ -62,3 +62,20 @@ rustflags = [ "-C", "link-arg=-fuse-ld=/opt/homebrew/bin/zld"]
 1. Installation: `cargo install cargo-tarpaulin`
 1. Run: `cargo tarpaulin --ignore-test`
 
+
+# Interesting crates
+
+1. Cow (Copy-On-Write) see blog
+2. anyhow.workspace = true
+3. async-trait.workspace = true
+4. chrono.workspace = true
+5. clap = { version = "4.2.4", features = ["derive"] }
+6. crossterm = "0.25"
+7. directories = "5.0.0"
+8. log.workspace = true
+9. simplelog = "0.12.1"
+10. textwrap = "0.16.0"
+11. thiserror = "1.0.40"
+12. toml = "0.7.3"
+13. tui = "0.19.0"
+14. tui-textarea = "0.2.0"
