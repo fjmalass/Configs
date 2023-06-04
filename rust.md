@@ -4,7 +4,10 @@
 
 1. Installation: `cargo install cargo-watch
 2. Run: `cargo watch -x run -x test -x check`
-3. And to watch changes in only the src folder and clear the console use: `cargo watch -c -w src -x run`
+3. And to watch changes in only the src folder and clear the console, set release mode use:
+```
+cargo watch -c -w src -x 'run -r'
+````
 
 
 # Faster linking
@@ -54,14 +57,33 @@ rustflags = [ "-C", "link-arg=-fuse-ld=/opt/homebrew/bin/zld"]
 
 1. Installation: `rustup component add clippy`
 2. Run: `cargo clippy`
-2. CD/CI: `cargo clippy -- -D warnings`
+3. CD/CI: `cargo clippy -- -D warnings` (will fail)
 
 
 # Coverage
 
 1. Installation: `cargo install cargo-tarpaulin`
-1. Run: `cargo tarpaulin --ignore-test`
+2. Run: `cargo tarpaulin --ignore-test`
 
+# Security
+
+1. Installation: `cargo install cargo-audit`
+2. Run: `cargo audit`
+
+#  Macros Expansion/Generation
+
+1. Installation: `cargo install cargo-expand`
+2. Run: `cargo expand`
+
+Rem: Many need to install nightly compiler (`rustup toolchain install nightly --allow-downgrade`
+use `cargo +nightly expand`
+
+
+
+# GUI `slint-ui`
+
+1.  using sling with `slint-viewer`
+2.  k
 
 # Interesting crates
 
@@ -79,3 +101,7 @@ rustflags = [ "-C", "link-arg=-fuse-ld=/opt/homebrew/bin/zld"]
 12. toml = "0.7.3"
 13. tui = "0.19.0"
 14. tui-textarea = "0.2.0"
+15. actix-web
+16. tokio = {version = "2",  features
+
+
