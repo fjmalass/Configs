@@ -70,20 +70,31 @@ rustflags = [ "-C", "link-arg=-fuse-ld=/opt/homebrew/bin/zld"]
 1. Installation: `cargo install cargo-audit`
 2. Run: `cargo audit`
 
-#  Macros Expansion/Generation
+# Macros Expansion/Generation
 
 1. Installation: `cargo install cargo-expand`
 2. Run: `cargo expand`
+
+# Remove Unused
+
+1. Installation: `cargo install cargo-udeps`
+2. Run: `cargo udeps`
 
 Rem: Many need to install nightly compiler (`rustup toolchain install nightly --allow-downgrade`
 use `cargo +nightly expand`
 
 
-
 # GUI `slint-ui`
 
-1.  using sling with `slint-viewer`
-2.  k
+1.  `slint-viewer`
+    a. Installation `cargo install slint-viewer`
+    b. Run is from `src` dir and call `slint-viewer ui/main.ui`
+
+2. Example is `cargo-ui`
+    a. Installation `cargo install cargo-ui`
+    b. running as `cargo-ui`
+
+3. Crate in [github](https://github.com/slit-ui)
 
 # Interesting crates
 
