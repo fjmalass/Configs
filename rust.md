@@ -59,6 +59,9 @@ rustflags = [ "-C", "link-arg=-fuse-ld=/opt/homebrew/bin/zld"]
 2. Run: `cargo clippy`
 3. CD/CI: `cargo clippy -- -D warnings` (will fail)
 
+# Lsp for slint-ui
+1. `cargo install slint-lsp`
+2. `nvim` configuration: [Github](https://github.com/slint-ui/slint/blob/master/editors/README.md)
 
 # Coverage
 
@@ -82,6 +85,53 @@ rustflags = [ "-C", "link-arg=-fuse-ld=/opt/homebrew/bin/zld"]
 
 Rem: Many need to install nightly compiler (`rustup toolchain install nightly --allow-downgrade`
 use `cargo +nightly expand`
+
+# Generate new
+
+1. Installation: `cargo install cargo-generate`
+2. Run: `cargo generate <https://github.coom..> --name <my-project>`
+
+# Simple definition of Key Data Stuctures
+
+## `Box<T>` - _unsafe thread_
+1. Allocate new instance on the heap
+2. Borrow check verified at compile time
+
+## `Rc<T>` - `Arc<T>`  - _unsafe/safe thread_
+1. Sharing ownership by reference counting.
+2. Similar to a `Box` with cloning will not allocate new data, just update a stored counter.
+3. `Rc` is not thread safe as the reference count can be updated at the same time. - does not have the `Send` trait
+4. `Arc` is thread safe - It has the `Send` (used in move) trait
+
+## `RefCell<T>` - `Cell<T>` - _unsafe thread_
+0. Also known as __interior mutability__
+1. Borow check verified at RUNTIME (if problem will panic)
+2. Provide the **mutable** vs **immutable** borrowing
+3. `Cell` needs `Copy` trait, using `take()`
+4. `RefCell` uses references, using `borrow_mut()`
+
+## `Mutex<T>` - `RwLock<T>` - _safe thread_
+1. Prevent data races when updating instance between threads
+2. `RwLock<T>` allows multiple reads but a single write and thus is more expensive
+
+## `Atomic` - _safe thread_
+1. Version of `Cell` but limited to U32 or small types `<T>`
+2. Tool for making sharing between threads possible
+
+## `UnsafeCell` - _no restrictions_
+
+# Threading
+1. `Send` Trait allows to move ownership to another thread, _e.g._, `Arc`, `Cell`, primitives like `i32`, `f64`
+2. `Sync` Trait allows to shared with another thread, _e.g._, primitives like `i32`, `f64` (but `Cell` is not)
+3. If a structure has all its fields with `Send` or `Sync`traits,  the structure  will also have the corresponding traits
+(To avoid use `std::marker::PhantomData<T>` with `T` not having the trait that is not supposed to be propagated to the structure. e.g.
+```
+struct X {
+    handle: i32,
+    _not_sync_: std::marker::PhantomData<Cell<()>>,
+}
+```
+`X` will have `Send` trait but not `Sync`.
 
 
 # GUI `slint-ui`
@@ -115,4 +165,13 @@ use `cargo +nightly expand`
 15. actix-web
 16. tokio = {version = "2",  features
 
+
+# Examples of UI
+
+[meseun](https://github.com/museun/spotify-mistake)
+
+1. Repaint function with type `Arc<dyn Fn() + Send + Sync + 'static>`
+2. User with return value `Fut<Option<User>>`
+3. Future
+4. use Cow<'a, str>
 
