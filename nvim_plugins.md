@@ -85,8 +85,6 @@ function SetFromHighlight()
   )
 end
 
-```
-
 
 ## Using treesitter
 
