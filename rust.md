@@ -73,15 +73,27 @@ rustflags = [ "-C", "link-arg=-fuse-ld=/opt/homebrew/bin/zld"]
 1. Installation: `cargo install cargo-audit`
 2. Run: `cargo audit`
 
-# Macros Expansion/Generatio`n
+# Full audit - `deny`
+
+1. Installation: `cargo install cargo-deny`
+2. Initialization project: `cargo deny init`
+3. Run: `cargo deny check`
+
+# Macros Expansion/Generation
 
 1. Installation: `cargo install cargo-expand`
-2. Run: `cargo expand`
+2. Run: `cargo expand | more`
 
 # Remove Unused
 
 1. Installation: `cargo install cargo-udeps`
 2. Run: `cargo udeps`
+
+# Docker and caching builds `cargo chef`
+
+1. Installation: `cargo install cargo-chef` check website for docker setup
+
+
 
 Rem: Many need to install nightly compiler (`rustup toolchain install nightly --allow-downgrade`
 use `cargo +nightly expand`
