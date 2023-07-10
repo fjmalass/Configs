@@ -9,6 +9,9 @@
 cargo watch -c -w src -x 'run -r'
 ````
 
+# Testing with output
+
+`cargo test -- --show-output`
 
 # Faster linking
 
@@ -92,6 +95,11 @@ rustflags = [ "-C", "link-arg=-fuse-ld=/opt/homebrew/bin/zld"]
 # Docker and caching builds `cargo chef`
 
 1. Installation: `cargo install cargo-chef` check website for docker setup
+
+# Create a new crate based on a template: `cargo generate --git <html.git>`
+
+1. Installation `cargo install cargo-generate`
+2. Run: `cargo generate --git https://github.com/<git_repo.git>`
 
 
 
