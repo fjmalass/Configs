@@ -44,6 +44,10 @@ rustflags = [ "-C", "link-arg=-fuse-ld=/opt/homebrew/bin/zld"]
 [target.aarch64-apple-darwin]
 rustflags = [ "-C", "link-arg=-fuse-ld=/opt/homebrew/bin/zld"]
 ```
+
+Rem: May need to install nightly compiler (`rustup toolchain install nightly --allow-downgrade`
+use `cargo +nightly expand`
+
 # Security
 
 1. Installation: `cargo install cargo-audit`
@@ -102,14 +106,75 @@ rustflags = [ "-C", "link-arg=-fuse-ld=/opt/homebrew/bin/zld"]
 2. Run: `cargo generate --git https://github.com/<git_repo.git>`
 
 
+# Tracking when `panic`
 
-Rem: Many need to install nightly compiler (`rustup toolchain install nightly --allow-downgrade`
-use `cargo +nightly expand`
+1. `RUST_TRACEBACK=1 cargo run`
+
+# Benchmark with `criterion`
+
+1. Installation `cargo install cargo-criterion`
+    a. Make sure to have `gnuplot` installed for html files, e.g., `brew install gnuplot`
+    b. Have the proper `criterion.toml` in the `project` directory
+2. Running `cargo criterion`
+    a. Create file `benches\my_bench.rs`, and update `
+    b. Check the `html` file in `target\criterion\reports\index.html`
+
+
+
+# Recover from errors
+
+1. With `match`
+```
+use std::fs::File;
+use std::io::ErrorKind;
+
+fn main() {
+    let greeting_file_result = File::open("hello.txt");
+
+    let greeting_file = match greeting_file_result {
+        Ok(file) => file,
+        Err(error) => match error.kind() {
+            ErrorKind::NotFound => match File::create("hello.txt") {
+                Ok(fc) => fc,
+                Err(e) => panic!("Problem creating the file: {:?}", e),
+            },
+            other_error => {
+                panic!("Problem opening the file: {:?}", other_error);
+            }
+        },
+    };
+}
+```
+2 . without `match`
+```
+let greeting_file = File::open("hello.txt").unwrap_or_else(|error| {
+        if error.kind() == ErrorKind::NotFound {
+            File::create("hello.txt").unwrap_or_else(|error| {
+                panic!("Problem creating the file: {:?}", error);
+            })
+        } else {
+            panic!("Problem opening the file: {:?}", error);
+        }
+    });
+```
+
+
+#
 
 # Generate new
 
 1. Installation: `cargo install cargo-generate`
 2. Run: `cargo generate <https://github.coom..> --name <my-project>`
+
+
+# Using environment variables
+
+```
+   let ignore_case = env::var("IGNORE_CASE").is_ok();
+```
+use `IGNORE_CASE=1 cargo run`
+
+
 
 # Simple definition of Key Data Stuctures
 
