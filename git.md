@@ -9,7 +9,7 @@
 
 ```
 git init
-git addd README.md
+git add README.md
 git commit -m "First commit"
 git branch -M main  # aka --move --force
 # add a remote with name `origin` (should probably use upstream)

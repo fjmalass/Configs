@@ -43,6 +43,7 @@ updated **2002-07-18**
 - `yabai` # Tiling windows
 - `yarn`
 - `zsh`
+- `ubersicht`
 
 ### `cask`
 

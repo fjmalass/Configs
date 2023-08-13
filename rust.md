@@ -260,3 +260,6 @@ struct X {
 3. Future
 4. use Cow<'a, str>
 
+# Borrow checking and `UnsafeCell`
+
+* [ralfj](https://www.ralfj.de/blog/)
