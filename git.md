@@ -32,6 +32,11 @@ git push -u origin main
 
 This enables having simultaneous branches in different directories
 
+## Check the difference
+
+`git diff --staged` # for staged
+`git diff` # for unstages
+
 ### Create a `bare` repo
 
 `cd Repos/Rhypt`
@@ -50,10 +55,15 @@ Tell git that the goodies are in a .git file
 4. Do your thing.
 5. May need to push to upstream, e.g., `git push --set-upstream origin main`
 
-## creating a new branch and working with a new branch
+
+## Check all branches and commits
+
+`git log --graph`
+
+## Creating a new branch and working with a new branch
 
 a. Create New branch: `git branch <new_branch>`
-b. Go into New Branch: `git checkout <new_branch>`
+b. Go into New Branch: `git switch <branch_name>` *old syntax* `git checkout <new_branch>`
 c. Push to `github/gitlab`: `git push --set-upstream origin <new_branch>`
 
 
@@ -70,7 +80,37 @@ git push -u -f origin main
 
 # Revert all unstaged changes
 
-1. Revert files:  `git reset --hard`
+1. Revert files:  `git reset --hard HEAD`
 2. Remove new directories: `git clean -fd`
 
+## Revert a specific file
+
+`git restore <filename>` *old syntax* `git checkout -- <filename>`
+
+
+## Stop tracking a file
+
+`git rm --cached <filename>`
+
+## Current state is broken
+
+### What is in the stash
+
+`git stash list`
+
+### Push to the stash stack
+`git stash` # saves changes to the top of the stash stack
+`git stash save "Message to go along changes"`
+`git statsh -u` # stash untracked files as well
+
+### Bring back the stash
+
+`git stash pop`
+`git stash apply stash@{stash_index} #
+
+
+## Find commit that introduced a bug
+
+Use `git bisect start` etc.
+Check `git help bisect`
 
