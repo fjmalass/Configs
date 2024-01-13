@@ -19,8 +19,9 @@ git push -u origin main
 ```
 
 ## Tutorial
-* [cheatsheets](https://github.com/mikeizbicki/ucr-cs100/blob/2015winter/textbook/cheatsheets/git-cheatsheet.md)
-* [github/advanced-git](https://github.com/mikeizbicki/ucr-cs100/tree/2015winter/textbook/tools/git/advanced-git)
+
+- [cheatsheets](https://github.com/mikeizbicki/ucr-cs100/blob/2015winter/textbook/cheatsheets/git-cheatsheet.md)
+- [github/advanced-git](https://github.com/mikeizbicki/ucr-cs100/tree/2015winter/textbook/tools/git/advanced-git)
 
 ## push to main
 
@@ -55,7 +56,6 @@ Tell git that the goodies are in a .git file
 4. Do your thing.
 5. May need to push to upstream, e.g., `git push --set-upstream origin main`
 
-
 ## Check all branches and commits
 
 `git log --graph`
@@ -63,13 +63,14 @@ Tell git that the goodies are in a .git file
 ## Creating a new branch and working with a new branch
 
 a. Create New branch: `git branch <new_branch>`
-b. Go into New Branch: `git switch <branch_name>` *old syntax* `git checkout <new_branch>`
+b. Go into New Branch: `git switch <branch_name>` _old syntax_ `git checkout <new_branch>`
 c. Push to `github/gitlab`: `git push --set-upstream origin <new_branch>`
 
-
 # Creating a rust environment
+
 1. Create Rep on https://github.com
 2. Create/Push on local machine
+
 ```
 git init
 git add -A
@@ -80,13 +81,12 @@ git push -u -f origin main
 
 # Revert all unstaged changes
 
-1. Revert files:  `git reset --hard HEAD`
+1. Revert files: `git reset --hard HEAD`
 2. Remove new directories: `git clean -fd`
 
 ## Revert a specific file
 
-`git restore <filename>` *old syntax* `git checkout -- <filename>`
-
+`git restore <filename>` _old syntax_ `git checkout -- <filename>`
 
 ## Stop tracking a file
 
@@ -99,18 +99,22 @@ git push -u -f origin main
 `git stash list`
 
 ### Push to the stash stack
+
 `git stash` # saves changes to the top of the stash stack
 `git stash save "Message to go along changes"`
-`git statsh -u` # stash untracked files as well
+`git stash -u` # stash untracked files as well
 
 ### Bring back the stash
 
-`git stash pop`
-`git stash apply stash@{stash_index} #
-
+`git stash pop` # applies and remove from stash list
+`git stash apply stash@{stash_index}` # applies only (keeps in the list)
 
 ## Find commit that introduced a bug
 
 Use `git bisect start` etc.
 Check `git help bisect`
 
+## Cleaning (as when after assemblies builds in `unity`)
+
+1. `git clean -xdf` # Cleans all new untracked, files and directories
+2. `git reset HEAD --hard` # reverts all changed files
