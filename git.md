@@ -107,7 +107,8 @@ git push -u -f origin main
 ### Bring back the stash
 
 `git stash pop` # applies and remove from stash list
-`git stash apply stash@{stash_index}` # applies only (keeps in the list)
+`git stash apply stash@{n}` # applies only (keeps in the list)
+`git restore --source=stash@{n} -- <filepath>` # apply a single file from stash@{n}
 
 ## Find commit that introduced a bug
 
