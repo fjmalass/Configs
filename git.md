@@ -58,7 +58,7 @@ Tell git that the goodies are in a .git file
 
 ## Check all branches and commits
 
-`git log --graph`
+`git log --graph --online`
 
 ## Creating a new branch and working with a new branch
 
