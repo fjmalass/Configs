@@ -26,3 +26,21 @@ For compilers to find llvm you may need to set:
   export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
   export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 ```
+
+## C++ Libraries and others
+
+[awesome-cpp](https://github.com/fffaraz/awesome-cpp/blob/master/README.md#cli)
+
+## CMake
+
+- [CMake Tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/index.html)
+- Also check the packt book
+
+## CLI
+
+- use [argumentum](https://github.com.mmahnic/argumentum)
+- use [cli11](https://github.com/CLIUtils/CLI11?tab=readme-ov-file)
+
+## Use [Valgrind](http://valgrind.org)
+
+Profiler/Memory management/tracking

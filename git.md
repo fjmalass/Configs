@@ -7,7 +7,7 @@
 
 ## Create a new Repo with existing files
 
-```
+```zsh
 git init
 git add README.md
 git commit -m "First commit"
@@ -19,8 +19,9 @@ git push -u origin main
 ```
 
 ## Tutorial
-* [cheatsheets](https://github.com/mikeizbicki/ucr-cs100/blob/2015winter/textbook/cheatsheets/git-cheatsheet.md)
-* [github/advanced-git](https://github.com/mikeizbicki/ucr-cs100/tree/2015winter/textbook/tools/git/advanced-git)
+
+- [cheatsheets](https://github.com/mikeizbicki/ucr-cs100/blob/2015winter/textbook/cheatsheets/git-cheatsheet.md)
+- [github/advanced-git](https://github.com/mikeizbicki/ucr-cs100/tree/2015winter/textbook/tools/git/advanced-git)
 
 ## push to main
 
@@ -34,43 +35,57 @@ This enables having simultaneous branches in different directories
 
 ## Check the difference
 
-`git diff --staged` # for staged
-`git diff` # for unstages
+```zsh
+git diff --staged` # for staged
+git diff # for unstages
+```
 
 ### Create a `bare` repo
 
-`cd Repos/Rhypt`
-`git clone --bare git@github.com:test .bare`
-Tell git that the goodies are in a .git file
-`echo "gitdir: ./.bare" > .git`
+```zsh
+cd Repos/Rhypt
+git clone --bare git@github.com:test .bare
+```
+
+Tell git that the goodies are in a `.git` file
+
+```zsh
+echo "gitdir: ./.bare" > .git
+```
 
 ## `Worktrees` based on [http://www.gitkraken.com](https://www.gitkraken.com/learn/git/git-worktree)
 
 1. Check if there are any `worktrees`: `git worktree list`
 2. Now work on `worktrees`
-   `git worktree add main`
-   `git worktree add rolling`
+
+```zsh
+git worktree add main
+git worktree add rolling`
+
+```
 
 3. Go to the directory where the repo lives, e.g., `cd main`
 4. Do your thing.
 5. May need to push to upstream, e.g., `git push --set-upstream origin main`
 
-
 ## Check all branches and commits
 
-`git log --graph --online`
+```zsh
+git log --graph --online
+```
 
 ## Creating a new branch and working with a new branch
 
 a. Create New branch: `git branch <new_branch>`
-b. Go into New Branch: `git switch <branch_name>` *old syntax* `git checkout <new_branch>`
+b. Go into New Branch: `git switch <branch_name>` _old syntax_ `git checkout <new_branch>`
 c. Push to `github/gitlab`: `git push --set-upstream origin <new_branch>`
 
-
 # Creating a rust environment
+
 1. Create Rep on https://github.com
 2. Create/Push on local machine
-```
+
+```zsh
 git init
 git add -A
 git commit -m "added new project"
@@ -80,13 +95,16 @@ git push -u -f origin main
 
 # Revert all unstaged changes
 
-1. Revert files:  `git reset --hard HEAD`
+1. Revert files: `git reset --hard HEAD`
 2. Remove new directories: `git clean -fd`
 
 ## Revert a specific file
 
-`git restore <filename>` *old syntax* `git checkout -- <filename>`
+```zsh
+git restore <filename>
+```
 
+_old syntax_ `git checkout -- <filename>`
 
 ## Stop tracking a file
 
@@ -99,18 +117,23 @@ git push -u -f origin main
 `git stash list`
 
 ### Push to the stash stack
+
 `git stash` # saves changes to the top of the stash stack
 `git stash save "Message to go along changes"`
-`git statsh -u` # stash untracked files as well
+`git stash -u` # stash untracked files as well
 
 ### Bring back the stash
 
-`git stash pop`
-`git stash apply stash@{stash_index} #
-
+`git stash pop` # applies and remove from stash list
+`git stash apply stash@{n}` # applies only (keeps in the list)
+`git restore --source=stash@{n} -- <filepath>` # apply a single file from stash@{n}
 
 ## Find commit that introduced a bug
 
 Use `git bisect start` etc.
 Check `git help bisect`
 
+## Cleaning (as when after assemblies builds in `unity`)
+
+1. `git clean -xdf` # Cleans all new untracked, files and directories
+2. `git reset HEAD --hard` # reverts all changed files
