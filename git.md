@@ -7,7 +7,7 @@
 
 ## Create a new Repo with existing files
 
-```
+```zsh
 git init
 git add README.md
 git commit -m "First commit"
@@ -35,22 +35,34 @@ This enables having simultaneous branches in different directories
 
 ## Check the difference
 
-`git diff --staged` # for staged
-`git diff` # for unstages
+```zsh
+git diff --staged` # for staged
+git diff # for unstages
+```
 
 ### Create a `bare` repo
 
-`cd Repos/Rhypt`
-`git clone --bare git@github.com:test .bare`
-Tell git that the goodies are in a .git file
-`echo "gitdir: ./.bare" > .git`
+```zsh
+cd Repos/Rhypt
+git clone --bare git@github.com:test .bare
+```
+
+Tell git that the goodies are in a `.git` file
+
+```zsh
+echo "gitdir: ./.bare" > .git
+```
 
 ## `Worktrees` based on [http://www.gitkraken.com](https://www.gitkraken.com/learn/git/git-worktree)
 
 1. Check if there are any `worktrees`: `git worktree list`
 2. Now work on `worktrees`
-   `git worktree add main`
-   `git worktree add rolling`
+
+```zsh
+git worktree add main
+git worktree add rolling`
+
+```
 
 3. Go to the directory where the repo lives, e.g., `cd main`
 4. Do your thing.
@@ -58,7 +70,9 @@ Tell git that the goodies are in a .git file
 
 ## Check all branches and commits
 
-`git log --graph`
+```zsh
+git log --graph --online
+```
 
 ## Creating a new branch and working with a new branch
 
@@ -71,7 +85,7 @@ c. Push to `github/gitlab`: `git push --set-upstream origin <new_branch>`
 1. Create Rep on https://github.com
 2. Create/Push on local machine
 
-```
+```zsh
 git init
 git add -A
 git commit -m "added new project"
@@ -86,7 +100,11 @@ git push -u -f origin main
 
 ## Revert a specific file
 
-`git restore <filename>` _old syntax_ `git checkout -- <filename>`
+```zsh
+git restore <filename>
+```
+
+_old syntax_ `git checkout -- <filename>`
 
 ## Stop tracking a file
 
