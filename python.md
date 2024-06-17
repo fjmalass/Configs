@@ -218,3 +218,33 @@ python -m gprof2dot -f pstats <filename.prof> | dot -Tpng <output.png>
 ```
 
 
+## Setting up pyenv (similar to bootdev) 2023-03-15
+
+1. Install pyenv with `webi`
+
+a. Update
+```
+sudo apt update
+sudo apt install -y build-essential zlib1g-dev libssl-dev
+sudo apt install -y libreadline-dev libbz2-dev libsqlite3-dev libffi-dev
+```
+
+  b. Download `pyenv`
+`curl -sS https://webi.sh/pyenv | sh`
+
+2. update in `.bashrc`
+```
+# PyENV (from bootdev)
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+
+3. install python3
+```
+pyenv install -v 3.12.2
+pyenv global 3.12.2
+python --version
+```
+
