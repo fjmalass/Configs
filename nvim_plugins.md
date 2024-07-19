@@ -1,4 +1,7 @@
 # NVIM PLUGINS
+## Creating a neovim plugin for docker 
+* [DeveloperVoices](https://www.youtube.com/watch?v=HXABdG3xJW4)
+
 ## 2023-03-31 [thePrimeagen](https://youtube.com/)
 
 ## 2022-12-17 [tj_devries](https://youtube.com/)
