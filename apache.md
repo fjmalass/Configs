@@ -4,6 +4,35 @@
 
 1. `sudo apt install apache2`
 2. check with Browser: `localhost`
+3. Install the `sh` files. in `/opt/kafka` use [install](https://kafka.apache.org/downloads) like `kafka-start-server.sh`, `kafka-topics.sh`, etc.
+4. Installating `python` [confluent-kafka-python](https://github.com/confluentinc/confluent-kafka-python)
+5. Follow the [Tutorial](https://docs.confluent.io/confluent-cli/current/install.html)
+6. Use `virtualenv` and `pip install confluent-kafka`
+
+
+### [Tutorial Python](https://docs.confluent.io/platform/current/clients/confluent-kafka-python/html/index.html)
+
+## Tutorial
+* Producer: `on_commit` callback for each message `producer.flush` or `client.poll`)
+* Consumer: `on_delivery` callback when async error for each message `client.poll`
+
+
+
+* `Topic`: file that contains key value pairs (similar to a database table, ), it contains `logs` (not queues) so they are indexed in sequence (hence `offset`)
+* `Partition` breaks a `topic` into multiple `logs` (`files``), the logs are push in a round robin manner into the partitions, if the logs contain a key, the key will determine the partition
+* `Brokers` (server/containers running kafka process)
+* `Replication`: `Leader` Replica (original data) and `Follower` replicas (copies)
+* `Consumer`: The order is sustained within a partition but not across partitions. With 1 consumer: all messages from all partitions are accessed. If multiple consumers from a same app (`consumer-group`). each consumer will have a subset of partions but the union will cover all  partitions
+* `Connectors`: programs that are either a `Sink Connector` (a kafka consumer) or a `Source Connector` (a kafka producer) Check [Confluent Hub](https://confluent.io/hub)
+
+* Could create Connector with *DataGen*
+* `Schema Registry` (a process outside the broker that serves as a Schema database) manages `json`, `protobuf`, and `avro`. Can generate schemas for both the `key` and `value` of entries in a topic.  
+
+* `ksqlDB` database optimized for `kafka` stream (in a sql language)
+
+## Python [Tutorial](https://developer.confluent.io/courses/apache-kafka/events/)
+* need a `config.ini` with `kafka` endpoint and API and secret keys (using a cli, rest or connector)
+
 
 ## Launch
 1. Check if it is running `sudo systemctl status apache2`
@@ -35,7 +64,6 @@
 ```
 
 
-
 ## Configuration
 
 * In `/etc/apache2/apache2.conf`
@@ -44,6 +72,14 @@
 * Change `/etc/hosts`
 
 
+## `Zookeeper` vs `Kraft`
+* `KRaft` if newer and reduces complexity and latency (as everything is handled withing `kafka`)
+
+
 ## Tutorials
 * [Youtube Linode](https://www.youtube.com/watch?v=1CDxpAzvLKY)
+* [Confluent YT](https://www.youtube.com/watch?v=kj9JH3ZdsBQ&list=PLa7VYi0yPIH0KbnJQcMv5N9iW8HkZHztH&index=4)
 
+
+## Javascript
+* `npm install express kafka-node --save`
