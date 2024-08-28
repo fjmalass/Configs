@@ -137,3 +137,21 @@ Check `git help bisect`
 
 1. `git clean -xdf` # Cleans all new untracked, files and directories
 2. `git reset HEAD --hard` # reverts all changed files
+
+## Using deploy keys (`ssh`)
+
+* Git credentials to `libsecret`
+
+`git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret`
+
+* Add deploy key
+
+```bash 
+DEPLOY_KEYS_DIR="${DEPLOY_KEYS_DIR:-../deploy_keys}"
+DEPLOY_KEYS="${DEPLOY_KEYS:-id-deploy-voice-cache}"
+
+echo "/usr/bin/keychain --lockwait 0 --clear ${DEPLOY_KEYS_DIR}/${DEPLOY_KEYS}"
+[[ ! "${DRY_RUN}" == "true" ]] && /usr/bin/keychain --lockwait 0 --clear "${DEPLOY_KEYS_DIR}/${DEPLOY_KEYS}"
+```
+
+
