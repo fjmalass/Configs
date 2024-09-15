@@ -1,30 +1,38 @@
 # Password Updates
 
-
 ## Mac / iPhone
-Via AppleId (Settings -> 
 
+Via AppleId (Settings ->  
 
 ## PC
-### Nimes 
+
+### Nimes
+
 * Passkey
 
 ### Valandil
-* Connect to VPN
-* Ctl-Alt-Delete 
 
-* wsl -> Passwd
+* Connect to VPN
+* `wsl` -> Passwd
+* `Jira`
 
 ### Concurrents Office
-* https://office.com
+
+* [office.com](https://office.com)
 
 ### Primal Space Office
-* https://office.com
 
+* [office.com](https://office.com)
 
-## Decoupled 
+## Decoupled
+
 ### Gmail
-* malassenet@gmail.com 
-* fmalassenet@grumpypixel.com
 
+* [gmail](email:malassenet@gmail.com)
+* [grumpy_gmail](email:fmalassenet@grumpypixel.com)
 
+## Operative Games
+
+* `Slack`
+* `P4V` aka Perforce
+* `ClickUp`
