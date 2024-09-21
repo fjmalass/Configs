@@ -154,4 +154,14 @@ echo "/usr/bin/keychain --lockwait 0 --clear ${DEPLOY_KEYS_DIR}/${DEPLOY_KEYS}"
 [[ ! "${DRY_RUN}" == "true" ]] && /usr/bin/keychain --lockwait 0 --clear "${DEPLOY_KEYS_DIR}/${DEPLOY_KEYS}"
 ```
 
+## Submodule
+
+* Adding: 
+ 1. `git submodule add <repo-url> <path>`, e.g., `git submodule add https://github.com/nvim-lua/kickstart.nvim ./nvim/.config/kickstart`
+ 2. `git submodule init` and `git submodule udpdate` 
+* Cloning: `git clone --recurse-submodules <repo-url>`
+* Updating: `git submodule update --remote --merge`
+
+
+
 
