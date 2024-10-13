@@ -1,10 +1,19 @@
 ---
 title: Python Slides
 author: Rhypt Inc.
-date: 2022-07-01
+date: 2024-10-13
 ---
 
 ## Python configuration
+
+### New: Docker
+
+- [Docker Tutorial Python](https://github.com/patrickloeber/docker-python-tutorial)
+
+1. Create `Dockerfile`
+2. Build the image `docker build -t my-python-app .`
+3. Run the image `docker run -it --rm --name my-running-app my-python-app`
+4. Update the container with volumes (`-v $(pwd):/app`)
 
 ### use `pyenv` (may want to switch to `poetry` as you can select python version
 
@@ -102,7 +111,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 ```
 
-### Use `pipenv`
+### Use `pipenv` (Deprecated)
 
 - **Installation** `pip install --user pipenv`
 - **Create Environment**
@@ -122,6 +131,13 @@ location of the environment: `pipenv --venv`
   - Or run program from a given environment `pipenv run python`
 
 - **Update packages**: `pipenv update`
+
+
+### Use `venv`
+- **Creation**
+  - `python -m venv <name>` (typically use `venv` or `env`)
+- **Activate**
+  - `source <name>/bin/activate`
 
 ### `Debugpy` for lunarvim (make sure to use the python pip from lunarvim [check lunarvim.md])
 

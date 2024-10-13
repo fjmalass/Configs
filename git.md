@@ -140,11 +140,11 @@ Check `git help bisect`
 
 ## Using deploy keys (`ssh`)
 
-* Git credentials to `libsecret`
+- Git credentials to `libsecret`
 
 `git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret`
 
-* Add deploy key
+- Add deploy key
 
 ```bash 
 DEPLOY_KEYS_DIR="${DEPLOY_KEYS_DIR:-../deploy_keys}"
@@ -154,14 +154,29 @@ echo "/usr/bin/keychain --lockwait 0 --clear ${DEPLOY_KEYS_DIR}/${DEPLOY_KEYS}"
 [[ ! "${DRY_RUN}" == "true" ]] && /usr/bin/keychain --lockwait 0 --clear "${DEPLOY_KEYS_DIR}/${DEPLOY_KEYS}"
 ```
 
-## Submodule
+## Integration of other repo in your own repo
 
-* Adding: 
- 1. `git submodule add <repo-url> <path>`, e.g., `git submodule add https://github.com/nvim-lua/kickstart.nvim ./nvim/.config/kickstart`
- 2. `git submodule init` and `git submodule udpdate` 
-* Cloning: `git clone --recurse-submodules <repo-url>`
-* Updating: `git submodule update --remote --merge`
+### Submodule (when using a separate repo, best witht forked repo)
 
+- Adding:
 
+ 1. `git submodule add <repo-url> <path>`, e.g.,  
+ `git submodule add https://github.com/nvim-lua/kickstart.nvim ./nvim/.config/kickstart`
 
+ 2. `git submodule init` and `git submodule udpdate`
 
+- Cloning: `git clone --recurse-submodules <repo-url>`
+
+- Updating: `git submodule update --remote --merge`
+
+### Subtree (simplest)
+
+- Adding as a remote: `git remote add kickstart https://github.com/nvim-lua/kickstart.nvim.git`
+and `git fetch kickstart`
+
+- Add substree:
+`git subtree add --prefix=nvim/.config/kickstart kickstart master --squash`
+
+- Commit: standard to the original repo
+
+- Pull update of kickstart: `git fetch kickstart` and `git subtree pull --prefix=nvim/.config/kickstart kickstart master --squash` Resolve conflicts
