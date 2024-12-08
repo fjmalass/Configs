@@ -1,6 +1,13 @@
 # NVIM PLUGINS
+
 ## Creating a neovim plugin for docker 
-* [DeveloperVoices](https://www.youtube.com/watch?v=HXABdG3xJW4)
+
+- [DeveloperVoices](https://www.youtube.com/watch?v=HXABdG3xJW4)
+
+## 2024-12-08
+
+- Consider looking at DotFiles from folke: `https://github.com/folke/dot`
+- Advent of Neovim: `https://www.youtube.com`
 
 ## 2023-03-31 [thePrimeagen](https://youtube.com/)
 
@@ -12,7 +19,10 @@
 
  |`<leader> sf` | Telescope |
 
+We have updated to use include 2024-12-08
+
 1. (without stow) in `~/.config/nvim`
+2. with stow move to `/mnt/d/Repos/DotFiles/` run: `stow -Stv ~ nvim`
 
 ## 2022-07-29
 
@@ -24,8 +34,8 @@
 1. Setting up the current directory as plugin repo `nvim --cmd "set +rtp=.`
 2. Create `lua` module in source directory `mkdir -p lua/<plugin_name>` and files
 
-* `touch lua/<plugin_name>/init.lua`
-* `touch lua/<plugin_name>/<module_name>.lua`
+- `touch lua/<plugin_name>/init.lua`
+- `touch lua/<plugin_name>/<module_name>.lua`
 
 3. Create function in `<module_name>.lua` file
 
@@ -70,11 +80,10 @@ vim.api.nvim-set_keymap('n', ',w', '<cmd>lua Testing.greet()<cr>', {})
 
 ## 2002-06-17
 
-### From the Primegean  https://www.twitch.tv/videos/1504554609
+### From the Primegean  `https://www.twitch.tv/videos/1504554609`
 
-* In `~Repos/neovim-lua-config`
-* Create `.config/lua-config`
-
+- In `~Repos/neovim-lua-config`
+- Create `.config/lua-config`
 
 ## Get highlighted
 
