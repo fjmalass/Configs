@@ -180,3 +180,25 @@ and `git fetch kickstart`
 - Commit: standard to the original repo
 
 - Pull update of kickstart: `git fetch kickstart` and `git subtree pull --prefix=nvim/.config/kickstart kickstart master --squash` Resolve conflicts
+
+## Deploy keys
+
+### Summary
+
+We generate a secret and public key.
+  - The secret key is kept on the local machine (typically in `~/.ssh/<deploy_key>`)
+  - The public key is included in the git hub repo
+
+### Implementation
+
+1. Generation of public/private keys:
+
+  - Linux: `ssh-keygen -t ed25519 -C "Deploy key for <Repo>`
+    typically save the secrete in `~/.ssh/<deploy_key>`
+    and the `.pub` will be posted on `github`
+
+  - `ssh-add ~/.ssh/<deploy_key>`
+
+2. Example of configuration with `ssh`:
+
+  - Use `~/.ssh/config`
