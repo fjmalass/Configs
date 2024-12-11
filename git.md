@@ -202,3 +202,13 @@ We generate a secret and public key.
 2. Example of configuration with `ssh`:
 
   - Use `~/.ssh/config`
+
+
+3. Examples using OperativeGames 
+
+``` bash
+  git clone -b rtapi-playground-zoom -c core.sshCommand="C:\\Windows\\System32\\OpenSSH\\ssh.exe -i D:/DeployKeys/id_deploy_omnichannel-node-js-call-server" git@github.com:Operative-Games/omnichannel-node-js-call-server.git
+  git clone -c core.sshCommand="C:\\Windows\\System32\\OpenSSH\\ssh.exe -i D:/DeployKeys/id_deploy_omnichannel_email_reader_python" git@github.com:Operative-Games/omnichannel_email_reader_python.git
+  git clone -c core.sshCommand="C:\\Windows\\System32\\OpenSSH\\ssh.exe -i D:/DeployKeys/id_deploy_omnichannel-unreal-launcher-python" git@github.com:Operative-Games/omnichannel-unreal-launcher-python.git
+  git clone -c core.sshCommand="C:\\Windows\\System32\\OpenSSH\\ssh.exe -i D:/DeployKeys/id_deploy_server_startup" git@github.com:Operative-Games/server_startup.git
+```

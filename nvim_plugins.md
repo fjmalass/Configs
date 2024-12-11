@@ -24,6 +24,8 @@ We have updated to use include 2024-12-08
 1. (without stow) in `~/.config/nvim`
 2. with stow move to `/mnt/d/Repos/DotFiles/` run: `stow -Stv ~ nvim`
 
+For Windows: copy nvim directory `D:\Repos\DotFiles\nvim\.config\nvim` to `c:\Users\<user>\AppData\Local\`
+
 ## 2022-07-29
 
 - Run Time Path `:help rtp`
