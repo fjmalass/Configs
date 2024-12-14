@@ -6,8 +6,29 @@
 
 ## 2024-12-08
 
-- Consider looking at DotFiles from folke: `https://github.com/folke/dot`
-- Advent of Neovim: `https://www.youtube.com`
+- Consider looking at DotFiles from folke: [github](https://github.com/folke/dot)
+- [Advent of Neovim](https://www.youtube.com/watch?v=TQn2hJeHQbM)
+
+### 
+
+  - Use `NVIM_APPNAME=nvimexample` (will use a new fresh config, will need to check `~/.config/nvimexample`
+
+  - Execute `lua` on selected lines: Select and then do `:lua`
+  - Check the `vim.<other>` functions: `:lua =vim`
+
+  - `autocmd` 
+    ```lua
+    vim.api.nvim_create_autocmd('TextYankPost', {
+      desc = 'Highlight when yanking (copying) text',
+      group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+      callback = function()
+        vim.highlight.on_yank()
+      end,
+    })
+
+    ```
+
+
 
 ## 2023-03-31 [thePrimeagen](https://youtube.com/)
 
