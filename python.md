@@ -111,28 +111,6 @@ unset __conda_setup
 # <<< conda initialize <<<
 ```
 
-### Use `pipenv` (Deprecated)
-
-- **Installation** `pip install --user pipenv`
-- **Create Environment**
-
-  - Change directory to the proper project `cd myproject`
-  - For `Tensorflow` with **M1**. `pipenv --python=$(conda run which python) --site-packages` see [tensorflow M1](https://developer.apple.com/metal/tensorflow-plugin/)
-  - `pipenv install <package>` (the `-e` is to make the package editable)
-    Rem: to see dependencies: `pipenv graph`
-    The environment is located in `~/.local/share/virtualenv/<Dir>-<Hash>`
-
-location of the environment: `pipenv --venv`
-
-- Files are in `PipFile`
-- Usage
-
-  - Spawn a shell `pipenv shell`
-  - Or run program from a given environment `pipenv run python`
-
-- **Update packages**: `pipenv update`
-
-
 ### Use `venv`
 - **Creation**
   - `python -m venv <name>` (typically use `venv` or `env`)
@@ -144,6 +122,10 @@ location of the environment: `pipenv --venv`
 ## Automatic generation of `requirements.txt` with `pip-tools`
 
 ### Install `pip-tools`
+
+## Consider using `uv` instead of `pip`
+
+- [uv](https://www.youtube.com/watch?v=qh98qOND6MI)
 
 ## Docker
 
