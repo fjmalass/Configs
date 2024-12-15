@@ -1,6 +1,6 @@
 # NVIM PLUGINS
 
-## Creating a neovim plugin for docker 
+## Creating a neovim plugin for docker
 
 - [DeveloperVoices](https://www.youtube.com/watch?v=HXABdG3xJW4)
 
@@ -9,26 +9,32 @@
 - Consider looking at DotFiles from folke: [github](https://github.com/folke/dot)
 - [Advent of Neovim](https://www.youtube.com/watch?v=TQn2hJeHQbM)
 
-### 
+### Tutorial
 
-  - Use `NVIM_APPNAME=nvimexample` (will use a new fresh config, will need to check `~/.config/nvimexample`
-
+  - Use `NVIM_APPNAME=nvimexample`
+  (will use a new fresh config, will need to check `~/.config/nvimexample`
   - Execute `lua` on selected lines: Select and then do `:lua`
   - Check the `vim.<other>` functions: `:lua =vim`
-
-  - `autocmd` 
+    - for `vim.fn` those are default `vim` functions that can be called directly, _e.g._, `vim.fn.stdpath('data')` we can use `:echo stdpath('data')`
+  - `autocmd`
     ```lua
     vim.api.nvim_create_autocmd('TextYankPost', {
       desc = 'Highlight when yanking (copying) text',
-      group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+      group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),:
       callback = function()
         vim.highlight.on_yank()
       end,
     })
-
     ```
+  - Executing a command line `let out = vim.fn.system({ "git", "clone", ...})`
+  (Check the lazy.nvim repo)
 
+  - `Runtime Paths`: `:echo nvim_list_runtime_paths()`
 
+  - For file type settings. use `./after/ftplugin/<language>.lua`
+  - `options` are located in `vim.opt`
+
+  - TreeSitter
 
 ## 2023-03-31 [thePrimeagen](https://youtube.com/)
 
@@ -57,8 +63,8 @@ For Windows: copy nvim directory `D:\Repos\DotFiles\nvim\.config\nvim` to `c:\Us
 1. Setting up the current directory as plugin repo `nvim --cmd "set +rtp=.`
 2. Create `lua` module in source directory `mkdir -p lua/<plugin_name>` and files
 
-- `touch lua/<plugin_name>/init.lua`
-- `touch lua/<plugin_name>/<module_name>.lua`
+  - `touch lua/<plugin_name>/init.lua`
+  - `touch lua/<plugin_name>/<module_name>.lua`
 
 3. Create function in `<module_name>.lua` file
 
@@ -83,7 +89,8 @@ For Windows: copy nvim directory `D:\Repos\DotFiles\nvim\.config\nvim` to `c:\Us
 
 6. Check to debug
 
-Rem: Lua does not reload an already existing module. You need to delete it and reload an edited version
+Rem: Lua does not reload an already existing module.
+You need to delete it and reload an edited version
 
 a. Create a `dev/init.lua`
 

@@ -52,7 +52,7 @@ for index, value in ipairs(favorites) do
 end
 
 readings = { fjm=9.5, other="N/A"}
-for key, value in pairs(readings) do 
+for key, value in pairs(readings) do
   print(key, value)
 end
 ```
@@ -108,7 +108,7 @@ print(variable_args("hello", "world", "!"))
 
 ## Functions Calling
 
-- Can drop the () when calling a function if the argument is a literal string 
+- Can drop the () when calling a function if the argument is a literal string
 or a list of literals
 
 ```lua
@@ -139,9 +139,9 @@ function MyTable:something(...) end
 ```lua
 vector_mt = {}
 vector_mt.__add = function(left, right)
-  return setmetatable({ 
+  return setmetatable({
     left[1] + right[1],
-    left[2] + right[2], 
+    left[2] + right[2],
     left[3] + right[3],
   }, vector_mt)
 end
@@ -155,4 +155,4 @@ vim.print(v3 + v3)
 
 - the `__index = function(self, key )` is how to get the `i-th` element of a table
 - the `__new_index = function(self, key, value)`  when creating a new index
-- the `__call = function(self, ...)`  when using a function 
+- the `__call = function(self, ...)`  when using a function
