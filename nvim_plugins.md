@@ -11,30 +11,37 @@
 
 ### Tutorial
 
-  - Use `NVIM_APPNAME=nvimexample`
-  (will use a new fresh config, will need to check `~/.config/nvimexample`
-  - Execute `lua` on selected lines: Select and then do `:lua`
-  - Check the `vim.<other>` functions: `:lua =vim`
-    - for `vim.fn` those are default `vim` functions that can be called directly, _e.g._, `vim.fn.stdpath('data')` we can use `:echo stdpath('data')`
-  - `autocmd`
-    ```lua
-    vim.api.nvim_create_autocmd('TextYankPost', {
-      desc = 'Highlight when yanking (copying) text',
-      group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),:
-      callback = function()
-        vim.highlight.on_yank()
-      end,
-    })
-    ```
-  - Executing a command line `let out = vim.fn.system({ "git", "clone", ...})`
-  (Check the lazy.nvim repo)
+- Use `NVIM_APPNAME=nvimexample`
+(will use a new fresh config, will need to check `~/.config/nvimexample`
+- Execute `lua`:
+  - on selected lines: Select and then do `:lua`
+  - on current line: `:.lua`
+- Check the `vim.<other>` functions: `:lua =vim`
+  - for `vim.fn` those are default `vim` functions that can be called directly,
+  _e.g._, `vim.fn.stdpath('data')` we can use `:echo stdpath('data')`
+- `autocmd`
 
-  - `Runtime Paths`: `:echo nvim_list_runtime_paths()`
+```lua
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+```
 
-  - For file type settings. use `./after/ftplugin/<language>.lua`
-  - `options` are located in `vim.opt`
-
-  - TreeSitter
+- Executing a command line `let out = vim.fn.system({ "git", "clone", ...})`
+(Check the `lazy.nvim` repo)
+- `Runtime Paths`: `:echo nvim_list_runtime_paths()`
+- For file type settings. use `./after/ftplugin/<language>.lua`
+- `options` are located in `vim.opt` (`echo =vim.opt`)
+- `TreeSitter`
+  - Installed by default in `neovim`
+  - `nvim-treesitter` plugin is there to have language specific queries
+  - `:Inspect` to list all highlights under cursor
+  - `:InspectTree` to list all highlights under cursor
+  - We can update the color for a given "node": `vim.cmd [[hi @function.builtin.lua guifd=yellow]]`
 
 ## 2023-03-31 [thePrimeagen](https://youtube.com/)
 
@@ -51,7 +58,11 @@ We have updated to use include 2024-12-08
 1. (without stow) in `~/.config/nvim`
 2. with stow move to `/mnt/d/Repos/DotFiles/` run: `stow -Stv ~ nvim`
 
-For Windows: copy nvim directory `D:\Repos\DotFiles\nvim\.config\nvim` to `c:\Users\<user>\AppData\Local\`
+For `Windows` copy nvim directory `D:\Repos\DotFiles\nvim\.config\nvim` to `c:\Users\<user>\AppData\Local\`
+
+## Set local directory to current file directory
+
+`:cd %:p:h`
 
 ## 2022-07-29
 
@@ -62,10 +73,8 @@ For Windows: copy nvim directory `D:\Repos\DotFiles\nvim\.config\nvim` to `c:\Us
 
 1. Setting up the current directory as plugin repo `nvim --cmd "set +rtp=.`
 2. Create `lua` module in source directory `mkdir -p lua/<plugin_name>` and files
-
-  - `touch lua/<plugin_name>/init.lua`
-  - `touch lua/<plugin_name>/<module_name>.lua`
-
+  a. `touch lua/<plugin_name>/init.lua`
+  b. `touch lua/<plugin_name>/<module_name>.lua`
 3. Create function in `<module_name>.lua` file
 
   ``` lua
