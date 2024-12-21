@@ -8,6 +8,7 @@
 
 - Consider looking at DotFiles from folke: [github](https://github.com/folke/dot)
 - [Advent of Neovim](https://www.youtube.com/watch?v=TQn2hJeHQbM)
+- Autocomplete `C-xC-l`
 
 ### Tutorial
 
@@ -41,24 +42,26 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   - `nvim-treesitter` plugin is there to have language specific queries
   - `:Inspect` to list all highlights under cursor
   - `:InspectTree` to list all highlights under cursor
-  - We can update the color for a given "node": `vim.cmd [[hi @function.builtin.lua guifd=yellow]]`
+  - We can update the color for a given "node":
+ `vim.cmd [[hi @function.builtin.lua guifd=yellow]]`
+- Formatting [youtube](https://www.youtube.com/watch?v=mEqqkHLhlGY)
+  - Use `:lua vim.lsp.buf.format()` to manually call the format
+  - `vim.lsp.formatexpr()` TODO: Read the doc
+-  
 
 ## 2023-03-31 [thePrimeagen](https://youtube.com/)
 
 ## 2022-12-17 [tj_devries](https://youtube.com/)
 
 - [kickstart.lua](https://github.com/nvim-lua/kickstart.nvim)
-
 - Default keymaps
-
- |`<leader> sf` | Telescope |
-
+ |`<leader>sf` | Telescope find file |
+ |`<leader>sn` | Telescope find file in `~/.config/nvim` |
 We have updated to use include 2024-12-08
-
-1. (without stow) in `~/.config/nvim`
-2. with stow move to `/mnt/d/Repos/DotFiles/` run: `stow -Stv ~ nvim`
-
+  1. (without stow) in `~/.config/nvim`
+  2. with stow move to `/mnt/d/Repos/DotFiles/` run: `stow -Stv ~ nvim`
 For `Windows` copy nvim directory `D:\Repos\DotFiles\nvim\.config\nvim` to `c:\Users\<user>\AppData\Local\`
+- Update the type of pickers use `pickers`
 
 ## Set local directory to current file directory
 
@@ -83,7 +86,6 @@ For `Windows` copy nvim directory `D:\Repos\DotFiles\nvim\.config\nvim` to `c:\U
      end
      return greet
   ```
-
 4. Import module into plugin in `init.lu`
 
   ``` lua
@@ -92,16 +94,12 @@ For `Windows` copy nvim directory `D:\Repos\DotFiles\nvim\.config\nvim` to `c:\U
         greet = greet
       }
   ```
-
 5. Test in load in nvim
 `:lua require('<plugin_name').greet()`
-
 6. Check to debug
-
 Rem: Lua does not reload an already existing module.
 You need to delete it and reload an edited version
-
-a. Create a `dev/init.lua`
+  a. Create a `dev/init.lua`
 
 ``` lua
 --- force lua to import the module again
@@ -115,7 +113,7 @@ Testing = require('plugin_name')
 vim.api.nvim-set_keymap('n', ',w', '<cmd>lua Testing.greet()<cr>', {})
 ```
 
-6. Installing with the plugin manager
+7. Installing with the plugin manager
 
 ## 2002-06-17
 
@@ -135,7 +133,6 @@ function SetFromHighlight()
   vim.api.nvim_buf_get_lines(0, s_row - 1, e_row, false), "\n"
   )
 end
-
 
 ## Using treesitter
 
