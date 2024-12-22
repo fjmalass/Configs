@@ -47,9 +47,28 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 - Formatting [youtube](https://www.youtube.com/watch?v=mEqqkHLhlGY)
   - Use `:lua vim.lsp.buf.format()` to manually call the format
   - `vim.lsp.formatexpr()` TODO: Read the doc
--  
+- Setup short cut to look at lzy packages
+```lua 
+vim.keymap.set("n", "<leader>sp", function()
+    builtin.find_files({ cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy") })
+end, { desc = "[S]earch Lazy [P]ackages Files " })
+```
 
-## 2023-03-31 [thePrimeagen](https://youtube.com/)
+- In Telescope picker `<C-q>` will create a quick-fix 
+- Windows/Buffer/Tabs navigation
+  - Tab: `<C-w><C-t>` create a new tab, `<C-w>T` move current window to a new tab, `gt` to next tab, `gT` to previous tab
+ 
+
+
+
+- In `terminal` mode: 
+  - Go to Normal mode: `<C-/><C-t>`
+- Quickfix (global to project) vs Location (only for current window)
+  - To see the error/diagonistics `vim.diagnotic.`
+  - `:cnext` or `:cprev` for quickfix `<C-j>` or `<C-k>`
+  - `:lnext` or `:lprev` for location `<M-j>` or `<M-k>`
+
+  ## 2023-03-31 [thePrimeagen](https://youtube.com/)
 
 ## 2022-12-17 [tj_devries](https://youtube.com/)
 
@@ -65,9 +84,7 @@ For `Windows` copy nvim directory `D:\Repos\DotFiles\nvim\.config\nvim` to `c:\U
 
 ## Set local directory to current file directory
 
-`:cd %:p:h`
-
-## 2022-07-29
+`:cd %:p:h` ## 2022-07-29
 
 - Run Time Path `:help rtp`
   - Check also `stdpath("config")`
