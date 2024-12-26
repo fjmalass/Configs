@@ -1,6 +1,6 @@
 # NVIM PLUGINS
 
-## Creating a neovim plugin for docker
+# Creating a neovim plugin for docker
 
 - [DeveloperVoices](https://www.youtube.com/watch?v=HXABdG3xJW4)
 
@@ -9,8 +9,12 @@
 - Consider looking at DotFiles from folke: [github](https://github.com/folke/dot)
 - [Advent of Neovim](https://www.youtube.com/watch?v=TQn2hJeHQbM)
 - Autocomplete `C-xC-l`
+- To validate auto complete:
+  - `<C-n>` Next
+  - `<C-p>` previous
+  - `<C-y>` validate/ok
 
-### Tutorial
+### Tutorial (from the advent of neovim)
 
 - Use `NVIM_APPNAME=nvimexample`
 (will use a new fresh config, will need to check `~/.config/nvimexample`
@@ -48,26 +52,53 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   - Use `:lua vim.lsp.buf.format()` to manually call the format
   - `vim.lsp.formatexpr()` TODO: Read the doc
 - Setup short cut to look at lzy packages
-```lua 
+
+```lua
 vim.keymap.set("n", "<leader>sp", function()
     builtin.find_files({ cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy") })
 end, { desc = "[S]earch Lazy [P]ackages Files " })
 ```
 
-- In Telescope picker `<C-q>` will create a quick-fix 
+- In Telescope picker `<C-q>` will create a quick-fix
 - Windows/Buffer/Tabs navigation
-  - Tab: `<C-w><C-t>` create a new tab, `<C-w>T` move current window to a new tab, `gt` to next tab, `gT` to previous tab
- 
+  - Tab: `<C-w><C-t>` create a new tab
+  -`<C-w>T` move current window to a new tab
+  -`gt` to next tab, `gT` to previous tab
 
-
-
-- In `terminal` mode: 
-  - Go to Normal mode: `<C-/><C-t>`
+- In `terminal` mode:
+  - Go to Normal mode: `<C-/><C-n>`
 - Quickfix (global to project) vs Location (only for current window)
-  - To see the error/diagonistics `vim.diagnotic.`
+  - To see the error/diagnostics `vim.diagnotics.set`
   - `:cnext` or `:cprev` for quickfix `<C-j>` or `<C-k>`
   - `:lnext` or `:lprev` for location `<M-j>` or `<M-k>`
+- `<Esc><Esc>` to Normal mode (as `<C-\><C-n>` is overloaded by windows 11)
 
+- create a small terminal and send command to it
+
+```lua
+-- avoid line numbers in terminal
+vim.api.nvim_create_autocmd("TermOpen", {
+	group = vim.api.nvim_create_augroup("custom-term-open", { clear = true }),
+	callback = function()
+		vim.opt.number = false
+		vim.opt.relativenumber = false
+	end,
+})
+
+-- create a small terminal window at bottom and allow getting commands without being in the terminal
+local channel_id = 0
+vim.keymap.set("n", "<space>st", function()
+	vim.cmd.vnew()
+	vim.cmd.term()
+	-- put at bottom
+	vim.cmd.wincmd("J")
+	vim.api.nvim_win_set_height(0, 15)
+	channel_id = vim.bo.channel
+end)
+vim.keymap.set("n", "<space>example", function()
+	vim.fn.chansend(channel_id, "git status\r\n")
+end)
+```
   ## 2023-03-31 [thePrimeagen](https://youtube.com/)
 
 ## 2022-12-17 [tj_devries](https://youtube.com/)
@@ -84,7 +115,11 @@ For `Windows` copy nvim directory `D:\Repos\DotFiles\nvim\.config\nvim` to `c:\U
 
 ## Set local directory to current file directory
 
-`:cd %:p:h` ## 2022-07-29
+- `:cd %:p:h`
+- `:tcd %:p:h` for current tab directory
+- `:wcd %:p:h` for current window directory
+
+## 2022-07-29
 
 - Run Time Path `:help rtp`
   - Check also `stdpath("config")`
@@ -103,15 +138,18 @@ For `Windows` copy nvim directory `D:\Repos\DotFiles\nvim\.config\nvim` to `c:\U
      end
      return greet
   ```
+
 4. Import module into plugin in `init.lu`
 
-  ``` lua
-    local greet = require('<module_name>.<module-name>')
-    return {
-        greet = greet
-      }
-  ```
+``` lua
+  local greet = require('<module_name>.<module-name>')
+  return {
+      greet = greet
+    }
+```
+
 5. Test in load in nvim
+
 `:lua require('<plugin_name').greet()`
 6. Check to debug
 Rem: Lua does not reload an already existing module.
@@ -119,15 +157,15 @@ You need to delete it and reload an edited version
   a. Create a `dev/init.lua`
 
 ``` lua
---- force lua to import the module again
-package.loaded['dev'] = nil
-pacakge.loaded['<plugin-name>'] = nil
-pacakge.loaded['<plugin-name>.<module_name>'] = nil
---- can call :luafile dev/init.lua or create a short cut
-vim.api.nvim_set_keymap('n', ',r', '<cmd>luafile dev/init.lua<cr>', {})
--- also test
-Testing = require('plugin_name')
-vim.api.nvim-set_keymap('n', ',w', '<cmd>lua Testing.greet()<cr>', {})
+  --- force lua to import the module again
+  package.loaded['dev'] = nil
+  pacakge.loaded['<plugin-name>'] = nil
+  pacakge.loaded['<plugin-name>.<module_name>'] = nil
+  --- can call :luafile dev/init.lua or create a short cut
+  vim.api.nvim_set_keymap('n', ',r', '<cmd>luafile dev/init.lua<cr>', {})
+  -- also test
+  Testing = require('plugin_name')
+  vim.api.nvim-set_keymap('n', ',w', '<cmd>lua Testing.greet()<cr>', {})
 ```
 
 7. Installing with the plugin manager
