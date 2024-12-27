@@ -113,6 +113,35 @@ We have updated to use include 2024-12-08
 For `Windows` copy nvim directory `D:\Repos\DotFiles\nvim\.config\nvim` to `c:\Users\<user>\AppData\Local\`
 - Update the type of pickers use `pickers`
 
+### Continuous Integration and Testing
+
+- Using `plenary`
+- Do not expose with `M._<function>`
+- Create a `tests` directory
+- Create files with `_spec` at end of basename, e.g., `parse_slides_spec.lua`
+
+```lua
+local parse = require("present")._parse_slides
+describe("present.parse_slides", function()
+    it("should parse an empty file", function()
+        assert.are_same({}, parse({}))
+    end)
+end)
+```
+- Run `:PlenaryBustedFile %` to run file
+- For Continuous Integration. create a `Makefile` in `<root>` directory (check [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim/tree/master))
+
+```Makefile
+.PHONY test lint docgen
+
+test:
+  nvim --headless --noplugin -u tests -c "PlenaryBustedDirectory"
+```
+
+## Creating user commands
+
+- In a file in `plugin` directory that will be automatically loaded, in the `<name>.nvim` directory add a command`vim.api.nvim_create_user_command()`
+
 ## Set local directory to current file directory
 
 - `:cd %:p:h`

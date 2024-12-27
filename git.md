@@ -144,15 +144,28 @@ Check `git help bisect`
 
 `git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret`
 
-- Add deploy key
+- Add deploy key or ssh
+  - Idea: Have private key on the PC and the public key on the github repo. 
+  e.g. `ssh-keygen -t ed25519 -C "fmalassenet@grumpypixel.com" -f .ssh/id_github
+_fmalassenet_grumpy`
+  - Update the `~/.ssh/config` with something like
 
-```bash 
-DEPLOY_KEYS_DIR="${DEPLOY_KEYS_DIR:-../deploy_keys}"
-DEPLOY_KEYS="${DEPLOY_KEYS:-id-deploy-voice-cache}"
+```yaml
+# First GitHub Account (or first repo)
+Host github-account1
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_github_account1
+  IdentitiesOnly yes
 
-echo "/usr/bin/keychain --lockwait 0 --clear ${DEPLOY_KEYS_DIR}/${DEPLOY_KEYS}"
-[[ ! "${DRY_RUN}" == "true" ]] && /usr/bin/keychain --lockwait 0 --clear "${DEPLOY_KEYS_DIR}/${DEPLOY_KEYS}"
+# Second GitHub Account (or second repo)
+Host github-account2
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_github_account2
+  IdentitiesOnly yes
 ```
+  - Update the remote with `git remote set-url origin git@github-account1:username/repot1.git`
 
 ## Integration of other repo in your own repo
 
@@ -160,7 +173,7 @@ echo "/usr/bin/keychain --lockwait 0 --clear ${DEPLOY_KEYS_DIR}/${DEPLOY_KEYS}"
 
 - Adding:
 
- 1. `git submodule add <repo-url> <path>`, e.g.,  
+ 1. `git submodule add <repo-url> <path>`, e.g.,
  `git submodule add https://github.com/nvim-lua/kickstart.nvim ./nvim/.config/kickstart`
 
  2. `git submodule init` and `git submodule udpdate`
@@ -204,7 +217,7 @@ We generate a secret and public key.
   - Use `~/.ssh/config`
 
 
-3. Examples using OperativeGames 
+3. Examples using OperativeGames
 
 ``` bash
   git clone -b rtapi-playground-zoom -c core.sshCommand="C:\\Windows\\System32\\OpenSSH\\ssh.exe -i D:/DeployKeys/id_deploy_omnichannel-node-js-call-server" git@github.com:Operative-Games/omnichannel-node-js-call-server.git
