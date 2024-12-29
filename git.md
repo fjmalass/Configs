@@ -166,6 +166,7 @@ Host github-account2
   IdentitiesOnly yes
 ```
   - Update the remote with `git remote set-url origin git@github-account1:username/repot1.git`
+  - Test if ssh works `ssh -T git@github.com`
 
 ## Integration of other repo in your own repo
 

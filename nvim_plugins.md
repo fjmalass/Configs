@@ -187,7 +187,7 @@ You need to delete it and reload an edited version
 
 ``` lua
   --- force lua to import the module again
-  package.loaded['dev'] = nil
+l package.loaded['dev'] = nil
   pacakge.loaded['<plugin-name>'] = nil
   pacakge.loaded['<plugin-name>.<module_name>'] = nil
   --- can call :luafile dev/init.lua or create a short cut
