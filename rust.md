@@ -337,3 +337,9 @@ if let [first, ..] = list {
 
 Except with `std::prelude::*`, Test `super::*`, Resport all elements in a crate library
 
+
+## HTTP (2012-09-27) [Comparison](https://www.youtube.com/watch?v=SR2LRhnL1AQ)
+
+1. `Actix`
+1. `Axum`
+3. `Rocket`
