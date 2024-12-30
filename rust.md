@@ -276,3 +276,64 @@ struct X {
 ## Example of SIMD
 
 - [frizbee](https://github.com/saghen/frizbee)
+
+## Practices
+
+[any patterns to avoid](https://www.youtube.com/watch?v=SWwTD2neodE)
+
+### Error Handling (2024-12-30)
+
+  ```rust
+  #![deny(clippy::unwrap_used)]
+  #![deny(clippy::expect_used)]
+  #![deny(clippy::panice)]
+  #!deny(clippy::unused_must_use)]```
+
+### Important Std Traits
+
+`From`, `TryFrom`, `FromStr`
+
+### Limit cloning
+
+- Avoid clone inside constructor (specify if ownership is taken over when using the call)
+- In Multithreaded environment when threads use the same data
+   - For read only: use `Arc::clone(config)`
+   - For read/write : use `Arc::clone(RwLock::new(config))`
+
+### Use pattern matching
+
+Examples:
+
+1. All cases
+```rust
+match user {
+    Some(User{name}) if name.is_empty() => println!("No Name"),
+    Some(User{name}) => println!("Name: {}", name),
+    None => println!("No User"),
+}
+```
+
+2. if -> True
+
+```rust
+match status {
+    Status::Active | Status::Pending => true,
+    _ => false,
+}
+```
+
+or use macro
+```rust
+    match!(status, Status::Active | Status::Pending)
+```
+
+3. Pulling the first element of an array
+
+```rust
+if let [first, ..] = list {
+```
+
+### Avoid global (wildcard) import
+
+Except with `std::prelude::*`, Test `super::*`, Resport all elements in a crate library
+
