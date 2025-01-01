@@ -59,7 +59,7 @@ vim.keymap.set("n", "<leader>sp", function()
 end, { desc = "[S]earch Lazy [P]ackages Files " })
 ```
 
-- In Telescope picker `<C-q>` will create a quick-fix
+- In `Telescope` picker `<C-q>` will create a quick-fix
 - Windows/Buffer/Tabs navigation
   - Tab: `<C-w><C-t>` create a new tab
   -`<C-w>T` move current window to a new tab
