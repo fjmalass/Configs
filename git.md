@@ -167,6 +167,8 @@ Host github-account2
 ```
   - Update the remote with `git remote set-url origin git@github-account1:username/repot1.git`
   - Test if ssh works `ssh -T git@github.com`
+  - Example for operative games to update access to `origin` via ssh `git remote set-url origin git@github-fmalassenet-grumpypixel:Operative-Games/omnichannel-unreal-launcher-python.git`
+  - Create a clone `git clone git@github-fmalassenet-grumpypixel:Operative-Games/open-source-llm-conversations.git`
 
 ## Integration of other repo in your own repo
 
