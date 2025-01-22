@@ -222,6 +222,8 @@ We generate a secret and public key.
 
 3. Examples using OperativeGames
 
+- Make sure that the deploy keys have restricted access (See `ssh.md`) using `icacls` on windows, or `600` on linux
+
 ``` bash
   git clone -b rtapi-playground-zoom -c core.sshCommand="C:\\Windows\\System32\\OpenSSH\\ssh.exe -i D:/DeployKeys/id_deploy_omnichannel-node-js-call-server" git@github.com:Operative-Games/omnichannel-node-js-call-server.git
   git clone -c core.sshCommand="C:\\Windows\\System32\\OpenSSH\\ssh.exe -i D:/DeployKeys/id_deploy_omnichannel_email_reader_python" git@github.com:Operative-Games/omnichannel_email_reader_python.git
