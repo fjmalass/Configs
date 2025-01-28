@@ -20,6 +20,7 @@ Make sure that the `.pem` file is `600` mode.
 or more specifically
 
 ``` bash
+icacls "D:\DeployKeys\id_deploy_omnichannel-unreal-launcher-python" /inheritance:r
 icacls "D:\DeployKeys\id_deploy_omnichannel-unreal-launcher-python" /grant Archer:(F)
 icacls "D:\DeployKeys\id_deploy_omnichannel-unreal-launcher-python" /grant SYSTEM:(F)
 
