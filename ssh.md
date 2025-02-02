@@ -2,6 +2,9 @@
 
 ## Github (See `git.md`)
 
+1. Make sure you have the ssh-agent running, `eval "$(ssh-agent -s)"` 
+2. Add the key to the agent `ssh-add ~/.ssh/<deploy_key>`
+
 ## SSH for Operative Games
 
 Make sure that the `.pem` file is `600` mode.
@@ -23,4 +26,7 @@ or more specifically
 icacls "D:\DeployKeys\id_deploy_omnichannel-unreal-launcher-python" /inheritance:r
 icacls "D:\DeployKeys\id_deploy_omnichannel-unreal-launcher-python" /grant Archer:(F)
 icacls "D:\DeployKeys\id_deploy_omnichannel-unreal-launcher-python" /grant SYSTEM:(F)
+
+
+
 
