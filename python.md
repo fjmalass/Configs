@@ -246,3 +246,5 @@ pyenv global 3.12.2
 python --version
 ```
 
+## Libraries
+- `lazyloader`
