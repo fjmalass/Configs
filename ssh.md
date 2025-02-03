@@ -4,7 +4,19 @@
 
 1. Make sure you have the ssh-agent running, `eval "$(ssh-agent -s)"` 
 2. Add the key to the agent `ssh-add ~/.ssh/<deploy_key>`
-3. Altenatively you can add the `GIT_SSH_COMMAND` like `GIT_SSH_COMMAND="ssh -i ~/.ssh/id_github_fmalassenet_grumpy" git pull`
+3. Altenatively you can add the `GIT_SSH_COMMAND` like 
+`GIT_SSH_COMMAND="ssh -i ~/.ssh/id_github_fmalassenet_grumpy" git pull`
+4. We can use the shortname, `Host` entry, in the `~/.ssh/config` file to make
+it easier to use the key. here `github-fjmalass` is the shortname for the 
+github account.
+
+``` bash
+Host github-fjmalass
+	HostName github.com
+	User git
+	IdentityFile ~/.ssh/id_github_fjmalass
+	IdentitiesOnly yes
+```
 
 
 ## SSH for Operative Games

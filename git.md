@@ -165,7 +165,7 @@ Host github-account2
   IdentityFile ~/.ssh/id_github_account2
   IdentitiesOnly yes
 ```
-  - Update the remote with `git remote set-url origin git@github-account1:username/repot1.git`
+  - Update the remote with `git remote set-url origin git@github-account1:username/repot1.git` (github-account1 is defined in the `~/.ssh/config` file)
   - Test if ssh works `ssh -T git@github.com`
   - Example for operative games to update access to `origin` via ssh `git remote set-url origin git@github-fmalassenet-grumpypixel:Operative-Games/omnichannel-unreal-launcher-python.git`
   - Create a clone `git clone git@github-fmalassenet-grumpypixel:Operative-Games/open-source-llm-conversations.git`
