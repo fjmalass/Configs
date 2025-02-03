@@ -4,6 +4,8 @@
 
 1. Make sure you have the ssh-agent running, `eval "$(ssh-agent -s)"` 
 2. Add the key to the agent `ssh-add ~/.ssh/<deploy_key>`
+3. Altenatively you can add the `GIT_SSH_COMMAND` like `GIT_SSH_COMMAND="ssh -i ~/.ssh/id_github_fmalassenet_grumpy" git pull`
+
 
 ## SSH for Operative Games
 

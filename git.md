@@ -169,6 +169,7 @@ Host github-account2
   - Test if ssh works `ssh -T git@github.com`
   - Example for operative games to update access to `origin` via ssh `git remote set-url origin git@github-fmalassenet-grumpypixel:Operative-Games/omnichannel-unreal-launcher-python.git`
   - Create a clone `git clone git@github-fmalassenet-grumpypixel:Operative-Games/open-source-llm-conversations.git`
+  - Can use the `GIT_SSH_COMMAND` like `GIT_SSH_COMMAND="ssh -i ~/.ssh/id_github_fmalassenet_grumpy" git pull`
 
 ## Integration of other repo in your own repo
 
