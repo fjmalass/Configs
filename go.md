@@ -19,19 +19,16 @@ add `export PATH=$PATH/usr/local/go/bin`
 
 ### On Windows
 
-* Install `choco install go` (update: `choco upgrade all`)
-
+- Install `choco install go` (update: `choco upgrade all`)
 
 ## Check Version
 
-`go version`
-Should be `>1.17.2`
+- `go version`:  Should be `>1.17.2`
 
 ## Run
 
-`go run <file>.go`
-also
-`go run .`
+- `go run <file>.go`
+- `go run .`
 
 ## Write program
 
@@ -43,3 +40,10 @@ Creates a `go.mod` configuration file
 ### Packages
 
 Location: `pkg.go.dev`
+
+### Test
+
+- `go test`
+- `go test -v`
+- `go test -cover`
+- `go test -coverprofile=coverage.out && go tool cover -html=coverage.out`
