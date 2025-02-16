@@ -7,3 +7,8 @@
 ## Generation Music
 
 - [Github models](https://github.com/nicolaus625/FM4Music)
+
+## LLM
+
+- `ollama` or `vllm`
+- `tinygrad`

@@ -4,6 +4,7 @@
 
 - [DeveloperVoices](https://www.youtube.com/watch?v=HXABdG3xJW4)
 
+
 ## 2024-12-08
 
 - Consider looking at DotFiles from folke: [github](https://github.com/folke/dot)
@@ -99,7 +100,8 @@ vim.keymap.set("n", "<space>example", function()
 	vim.fn.chansend(channel_id, "git status\r\n")
 end)
 ```
-  ## 2023-03-31 [thePrimeagen](https://youtube.com/)
+
+## 2023-03-31 [thePrimeagen](https://youtube.com/)
 
 ## 2022-12-17 [tj_devries](https://youtube.com/)
 
