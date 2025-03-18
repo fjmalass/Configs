@@ -145,7 +145,7 @@ Check `git help bisect`
 `git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret`
 
 - Add deploy key or ssh
-  - Idea: Have private key on the PC and the public key on the github repo. 
+  - Idea: Have private key on the PC and the public key on the github repo.
   e.g. `ssh-keygen -t ed25519 -C "fmalassenet@grumpypixel.com" -f .ssh/id_github
 _fmalassenet_grumpy`
   - Update the `~/.ssh/config` with something like
@@ -180,23 +180,12 @@ Host github-account2
  1. `git submodule add <repo-url> <path>`, e.g.,
  `git submodule add https://github.com/nvim-lua/kickstart.nvim ./nvim/.config/kickstart`
 
- 2. `git submodule init` and `git submodule udpdate`
-
-- Cloning: `git clone --recurse-submodules <repo-url>`
-
-- Updating: `git submodule update --remote --merge`
-
-### Subtree (simplest)
-
-- Adding as a remote: `git remote add kickstart https://github.com/nvim-lua/kickstart.nvim.git`
-and `git fetch kickstart`
-
-- Add substree:
+ 2. `git submodule init` and `git submodule udpdate` - Cloning: `git clone --recurse-submodules <repo-url>` Updating: `git submodule update --remote --merge` ### Subtree (simplest) Adding as a remote: `git remote add kickstart https://github.com/nvim-lua/kickstart.nvim.git` and `git fetch kickstar Add substree:
 `git subtree add --prefix=nvim/.config/kickstart kickstart master --squash`
 
 - Commit: standard to the original repo
-
-- Pull update of kickstart: `git fetch kickstart` and `git subtree pull --prefix=nvim/.config/kickstart kickstart master --squash` Resolve conflicts
+- Pull update of kickstart: `git fetch kickstart` and
+`git subtree pull --prefix=nvim/.config/kickstart kickstart master --squash` Resolve conflicts
 
 ## Deploy keys
 
@@ -208,26 +197,42 @@ We generate a secret and public key.
 
 ### Implementation
 
-1. Generation of public/private keys:
+  1. Generation of public/private keys:
+    - Linux: `ssh-keygen -t ed25519 -C "Deploy key for <Repo>`
+      typically save the secrete in `~/.ssh/<deploy_key>`
+      and the `.pub` will be posted on `github`
+    - `ssh-add ~/.ssh/<deploy_key>`
 
-  - Linux: `ssh-keygen -t ed25519 -C "Deploy key for <Repo>`
-    typically save the secrete in `~/.ssh/<deploy_key>`
-    and the `.pub` will be posted on `github`
+  2. Example of configuration with `ssh`:
+    - Use `~/.ssh/config`
 
-  - `ssh-add ~/.ssh/<deploy_key>`
+  3. Examples using OperativeGames
+  - Make sure that the deploy keys have restricted access (See `ssh.md`) using `icacls` on windows, or `600` on linux
 
-2. Example of configuration with `ssh`:
+  ``` bash
+    git clone -b rtapi-playground-zoom -c core.sshCommand="C:\\Windows\\System32\\OpenSSH\\ssh.exe -i D:/DeployKeys/id_deploy_omnichannel-node-js-call-server" git@github.com:Operative-Games/omnichannel-node-js-call-server.git
+    git clone -c core.sshCommand="C:\\Windows\\System32\\OpenSSH\\ssh.exe -i D:/DeployKeys/id_deploy_omnichannel_email_reader_python" git@github.com:Operative-Games/omnichannel_email_reader_python.git
+    git clone -c core.sshCommand="C:\\Windows\\System32\\OpenSSH\\ssh.exe -i D:/DeployKeys/id_deploy_omnichannel-unreal-launcher-python" git@github.com:Operative-Games/omnichannel-unreal-launcher-python.git
+    git clone -c core.sshCommand="C:\\Windows\\System32\\OpenSSH\\ssh.exe -i D:/DeployKeys/id_deploy_server_startup" git@github.com:Operative-Games/server_startup.git
+  ```
 
-  - Use `~/.ssh/config`
+## Tags
 
+### Create tag
 
-3. Examples using OperativeGames
+- Lightweight: `git tag v1.0.0`
+- Annotated: `git tag -a v1.0.0 -m "Version 1.0.0 release with more stuff`
 
-- Make sure that the deploy keys have restricted access (See `ssh.md`) using `icacls` on windows, or `600` on linux
+### Pushing tags to origin
 
-``` bash
-  git clone -b rtapi-playground-zoom -c core.sshCommand="C:\\Windows\\System32\\OpenSSH\\ssh.exe -i D:/DeployKeys/id_deploy_omnichannel-node-js-call-server" git@github.com:Operative-Games/omnichannel-node-js-call-server.git
-  git clone -c core.sshCommand="C:\\Windows\\System32\\OpenSSH\\ssh.exe -i D:/DeployKeys/id_deploy_omnichannel_email_reader_python" git@github.com:Operative-Games/omnichannel_email_reader_python.git
-  git clone -c core.sshCommand="C:\\Windows\\System32\\OpenSSH\\ssh.exe -i D:/DeployKeys/id_deploy_omnichannel-unreal-launcher-python" git@github.com:Operative-Games/omnichannel-unreal-launcher-python.git
-  git clone -c core.sshCommand="C:\\Windows\\System32\\OpenSSH\\ssh.exe -i D:/DeployKeys/id_deploy_server_startup" git@github.com:Operative-Games/server_startup.git
-```
+- Specific tag: `git push origin v1.0.0`
+- All tags: `git push origin --tags`
+
+### Getting the latest tag name
+
+- fetch/pull last tag: `git fetch --tags`
+- change branch: `git checkout v1.0.0`
+- Short version: ```git checkout $(git describe --tags `git rev-list --tags --max-count=1`)```
+- remote name: `git ls-remote --tags origin`
+- local name: `git describe --tags --abbrev=0`
+

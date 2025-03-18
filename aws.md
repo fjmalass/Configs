@@ -19,9 +19,8 @@
 - List bucket: `aws s3api list-objects --bucket og-daniel-1`
 - Download from bucket: `aws s3api get-object --bucket og-daniel-1 --key daniel-build/20241210_Daniel_Zoom.zip 20241210_Daniel_Zoom.zip`
 
-
-
 ## using `pm2`
 
 - Starting: `pm2 start npm --name=monolith -- start`
 - ReStarting: `pm2 restart monolith`
+
