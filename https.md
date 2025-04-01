@@ -25,9 +25,9 @@
 
 ## using `.p7b` files
 
- - `.crt` public certificate to prove the server's identity to clients
- - `.ca-bundle` certificate authority bundle: chain to verfy the server certificate to a trusted authority
- - `.p7b` PKCS# certificate: chaine to verfy the server certificate to a trusted authority (you can convert it to `.pem`)
+- `.crt` public certificate to prove the server's identity to clients
+- `.ca-bundle` certificate authority bundle: chain to verfy the server certificate to a trusted authority
+- `.p7b` PKCS# certificate: chaine to verfy the server certificate to a trusted authority (you can convert it to `.pem`)
 
 ## Convertion for `fastApi`
 
