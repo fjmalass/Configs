@@ -24,3 +24,13 @@
 - Starting: `pm2 start npm --name=monolith -- start`
 - ReStarting: `pm2 restart monolith`
 
+## Secret Manager
+
+  - [AWS Secret Managers](https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html)
+  - [SSH](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connect-linux-inst-eic.html)
+  - [Certifcates](https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html)
+  - [Keys](https://docs.aws.amazon.com/kms/latest/developerguide/overview.html)
+
+## etcd
+
+  - [go](https://pkg.go.dev/go.etcd.io/etcd/client/v3)
