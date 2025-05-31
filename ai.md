@@ -12,3 +12,11 @@
 
 - `ollama` or `vllm`
 - `tinygrad`
+
+## Configuration
+
+- `hydra` (using `yaml` files to generate configuration)
+
+## Viseme
+
+- Look at `MPEG4-FA` Face Animation
