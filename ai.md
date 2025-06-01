@@ -12,6 +12,7 @@
 
 - `ollama` or `vllm`
 - `tinygrad`
+- Ollama is faster than 
 
 ## Configuration
 
@@ -20,3 +21,8 @@
 ## Viseme
 
 - Look at `MPEG4-FA` Face Animation
+
+
+## FineTuning
+
+- Using [`Unsloth`](https://unsloth.ai)
