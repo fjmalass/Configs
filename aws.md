@@ -10,9 +10,15 @@
 - GPU and Nvidia [WindowsServer16](https://aws.amazon.com/marketplace/pp/prodview-ymy34danwtiro?sr=0-1&ref_=beagle&applicationId=AWSMPContessa
 )
 
-## `AWS CLI`
+## `AWS CLI` 
 
-- Download `msiexec.exe /i https://awscli.amazonaws.com/AWSCLIV2.msi`
+- Download - [Install or update](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html): `msiexec.exe /i https://awscli.amazonaws.com/AWSCLIV2.msi`
+
+### Commands
+
+- Show configuration: `aws sts get-caller-identity` []
+  - Located in `~/.aws/config` (Linux) or `C:\Users\<User>\.aws\config`
+- List all s3 buckets `aws s3 ls`
 
 ## S3 Buckets and `AWS CLI`
 
@@ -23,6 +29,7 @@
 
 - Starting: `pm2 start npm --name=monolith -- start`
 - ReStarting: `pm2 restart monolith`
+- ReStarting instance via http: ``
 
 ## Secret Manager
 

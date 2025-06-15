@@ -5,6 +5,15 @@
 - MacOS: `brew install git-lsf`
 - Linux/Windows: Download from [git-lfs.github.com](https://git-lfs.github.com)
 
+## Caching passphrases:
+
+- Use `ssh-agent`
+```zsh
+eval $(ssh-agent)
+ssh-add ~/.ssh/id_github_fjmalass
+ssh-add ~/.ssh/id_github_fmalassenet_grumpy
+```
+
 ## Create a new Repo with existing files
 
 ```zsh
@@ -236,3 +245,66 @@ We generate a secret and public key.
 - remote name: `git ls-remote --tags origin`
 - local name: `git describe --tags --abbrev=0`
 
+## Automation
+
+```zsh
+#!/usr/bin/env zsh
+
+repos=(
+	"/mnt/d/2DA/OperativeGames/unreal-zoom-python"
+	"/mnt/d/2DA/OperativeGames/unreal-pipeline-scripts"
+	"/mnt/d/2DA/OperativeGames/aws_secrets_manager"
+	"/mnt/d/2DA/OperativeGames/character-ai-module"
+	"/mnt/d/2DA/OperativeGames/eleven-labs-tts-module"
+	"/mnt/d/2DA/OperativeGames/google-stt-module"
+	"/mnt/d/2DA/OperativeGames/interruption-module"
+	"/mnt/d/2DA/OperativeGames/lodge-ai-server"
+	"/mnt/d/2DA/OperativeGames/og-router"
+	"/mnt/d/2DA/OperativeGames/omnichannel-Node-js-call-server"
+	"/mnt/d/2DA/OperativeGames/open-source-llm-conversations"
+	"/mnt/d/2DA/OperativeGames/scenestream"
+	"/mnt/d/2DA/OperativeGames/table-read"
+	"/mnt/d/2DA/OperativeGames/unreal-pipeline-scripts"
+	"/mnt/d/2DA/OperativeGames/viseme-analysis-module"
+	"/mnt/d/2DA/OperativeGames/zoom-oauth-manager"
+)
+
+base_dir="/mnt/d/2DA/OperativeGames"
+
+pull_repo() {
+	local repo_path="$1"
+	local repo_name="${repo_path:t}"
+
+	if [[ ! -d "$repo_path/.git" ]]; then
+		print "❌ $repo_path: Not a git repository"
+		return 1
+	fi
+
+	print "🔄 Pulling $repo_name..."
+	cd "$repo_path"
+
+	# check for uncommitted
+	if git diff-index -quiet HEAD -- 2>/dev/null; then
+		print "⚠️  $repo_name: Has uncommitted changes, skipping"
+	fi
+
+	# Pull with status
+	if git pull --ff-only; then
+		print "✅ $repo_name: Updated successfully"
+	else
+		print "❌ $repo_name: Pull failed"
+	fi
+}
+
+for repo in "${repos[@]}"; do
+	pull_repo "$repo"
+	print "━━━━━━━━━━━━━━━━━━"
+done
+# for gitdir in "$base_dir"/*/.git(/); do
+# 	print "gidir $gitdir"
+# 	repo="${gitdir:h}"
+# 	pull_repo "$repo"
+# 	print "----"
+# done
+
+```
