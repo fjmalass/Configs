@@ -34,13 +34,32 @@ From [Evaluation of real-time transcriptions using end-to-end ASR models](https:
 - Batch translation
   - Whisper (End-to-End E2E)
   - Wav2Vec (E2E)
-  - Kaldi (Traditional and modular)
+  - Kaldi (Traditional GMM/HMM and modular)
 
 
 ### Low latency ASR
 
-[E2E Segmentation in a Two-Pass Cascaded Encoder ASR Model, 2023](https://arxiv.org/pdf/2211.15432)
+- [E2E Segmentation in a Two-Pass Cascaded Encoder ASR Model, 2023](https://arxiv.org/pdf/2211.15432)
+
+
+
  
-## VAD (Voice Activity Detection)
+## VAD (Voice Activity Detection) - Continuous Integrate and Fire (CIF)
+
+- Best: Silero VAD (good noise, uses Onnx GPU)
+- Lightweight: WebRTC VAD:
+  - [TestingWebRTC](https://malaya-speech.readthedocs.io/en/stable/load-vad.html)
+  - [Coding](https://github.com/wiseman/py-webrtcvad/blob/master/cbits/webrtc/common_audio/vad/vad_core.c)
+- Modern VAD
+
+ 
+
+- CIF: large models, computationally intensive
+
+### Comparison
+
+- [Review](https://github.com/bigcash/awesome-vad)
+
+- EAT (Efficient Audio Transformer)
 
 

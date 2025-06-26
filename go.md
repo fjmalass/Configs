@@ -47,3 +47,10 @@ Location: `pkg.go.dev`
 - `go test -v`
 - `go test -cover`
 - `go test -coverprofile=coverage.out && go tool cover -html=coverage.out`
+
+## Accessing private github repos  [See](git.md$##git-and-ability-to-download-private-repo-with-go)
+
+- Create a git token and make sure that it has 
+- `git config --global url."https://<user>:<gh_token>@github.com/".insteadOf "https://github.com/"`
+  for OperativeGames i have been using `francois-grumpy` for `<user>`
+
