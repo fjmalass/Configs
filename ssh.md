@@ -34,8 +34,23 @@ Make sure that the `.pem` file is `600` mode.
 
 or more specifically
 
-``` bash
+``` powershell
 icacls "D:\DeployKeys\id_deploy_omnichannel-unreal-launcher-python" /inheritance:r
 icacls "D:\DeployKeys\id_deploy_omnichannel-unreal-launcher-python" /grant Archer:(F)
 icacls "D:\DeployKeys\id_deploy_omnichannel-unreal-launcher-python" /grant SYSTEM:(F)
+```
+
+### Connecting to windows from remote
+1. Check the location of the (public) keys with 
+
+```powershell
+Get-Content C:\ProgramData\ssh\sshd_config | Select-String -Pattern "PubkeyAuthentication|AuthorizedKeysFile|PasswordAuthentication"
+```
+
+1. if the account (Archer) is administrator: place  in `c:\ProgramData\ssh\sshd_config` as we have 
+
+```toml
+Match Group administrators
+       AuthorizedKeysFile __PROGRAMDATA__/ssh/administrators_authorized_keys
+```
 

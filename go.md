@@ -50,7 +50,13 @@ Location: `pkg.go.dev`
 
 ## Accessing private github repos  [See](git.md$##git-and-ability-to-download-private-repo-with-go)
 
-- Create a git token and make sure that it has 
+- Create a git token and make sure that it has
 - `git config --global url."https://<user>:<gh_token>@github.com/".insteadOf "https://github.com/"`
   for OperativeGames i have been using `francois-grumpy` for `<user>`
+
+## References
+
+- [Let's Go Further](https://lets-go-further.alexedwards.net)
+- [100 Go Mistakes and How to Avoid Them](https://100go.co)
+- [Lear Go With Tests](https://quii.gitbook.io/learn-go-with-tests)
 
