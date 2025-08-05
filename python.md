@@ -248,3 +248,11 @@ python --version
 
 ## Libraries
 - `lazyloader`
+
+
+## Nvidia 
+
+### WSL
+
+- Check if nvidia is available: `nvidia-smi`
+- Configuration [CUDA](https://developer.nvidia.com/cuda-downloads)
