@@ -187,7 +187,7 @@ source ~/miniforge3/bin/activate
 See the example of [github](https://github.com/cansik/mediapipe-silicon)
 
 # Profiling - cProfile and SnakeViz
-```
+```sh
 pip install cprofile
 pip install profilehooks
 pip install snakeviz
@@ -197,7 +197,7 @@ also include `brew install graphviz`
 
 ## Use decorator
 
- ```
+ ```python
 from profilehooks import profile
  ...
 @profile(stdout=false, filename='junk.prof')
@@ -206,12 +206,14 @@ def baseline():
 ```
 
 ## Option 1: Use `snakeviz`
-```
+
+```sh
 snakeviz <filename.prof>
 ```
 
 ## Option 2: Use `gprofdot`
-```
+
+```sh
 python -m gprof2dot -f pstats <filename.prof> | dot -Tpng <output.png>
 ```
 
@@ -221,17 +223,19 @@ python -m gprof2dot -f pstats <filename.prof> | dot -Tpng <output.png>
 1. Install pyenv with `webi`
 
 a. Update
-```
+
+```sh
 sudo apt update
 sudo apt install -y build-essential zlib1g-dev libssl-dev
 sudo apt install -y libreadline-dev libbz2-dev libsqlite3-dev libffi-dev
-```
 
-  b. Download `pyenv`
+b. Download `pyenv`
+
 `curl -sS https://webi.sh/pyenv | sh`
 
 2. update in `.bashrc`
-```
+```sh
+
 # PyENV (from bootdev)
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
@@ -240,19 +244,28 @@ eval "$(pyenv virtualenv-init -)"
 ```
 
 3. install python3
-```
+```sh
 pyenv install -v 3.12.2
 pyenv global 3.12.2
 python --version
 ```
 
 ## Libraries
-- `lazyloader`
 
+- `lazyloader`
+- `tabulate`
+- `rich` and `textualize` (pretty print and tui)
+- `hypothesis` (testing)
+- `pydantic-settings` (environment variables)
+- `httpx` (better performance than Request)
+- `fastapi-pagination`
+- `nicegui`
+- `langgraph`
+- `pydantic-ai`
 
 ## Nvidia 
 
 ### WSL
 
-- Check if nvidia is available: `nvidia-smi`
+- Check if Nvidia is available: `nvidia-smi`
 - Configuration [CUDA](https://developer.nvidia.com/cuda-downloads)
