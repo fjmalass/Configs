@@ -12,3 +12,5 @@ From Hero_dev 2025_04_20
 
 
 
+## Check CUDA and Inference Server
+

@@ -13,6 +13,7 @@
 - `ollama` or `vllm`
 - `tinygrad`
 - Ollama is faster than 
+- Also check Nvidia GPU Cloud [ngc](https://docs.nvidia.com/ngc/gpu-cloud/ngc-user-guide/index.html)
 
 ## Configuration
 
@@ -41,9 +42,6 @@ From [Evaluation of real-time transcriptions using end-to-end ASR models](https:
 
 - [E2E Segmentation in a Two-Pass Cascaded Encoder ASR Model, 2023](https://arxiv.org/pdf/2211.15432)
 
-
-
- 
 ## VAD (Voice Activity Detection) - Continuous Integrate and Fire (CIF)
 
 - Best: Silero VAD (good noise, uses Onnx GPU)
@@ -51,9 +49,6 @@ From [Evaluation of real-time transcriptions using end-to-end ASR models](https:
   - [TestingWebRTC](https://malaya-speech.readthedocs.io/en/stable/load-vad.html)
   - [Coding](https://github.com/wiseman/py-webrtcvad/blob/master/cbits/webrtc/common_audio/vad/vad_core.c)
 - Modern VAD
-
- 
-
 - CIF: large models, computationally intensive
 
 ### Comparison
@@ -62,4 +57,10 @@ From [Evaluation of real-time transcriptions using end-to-end ASR models](https:
 
 - EAT (Efficient Audio Transformer)
 
+## LoRA (Low Rank Adaptation)
 
+- [arxiv](https://arxiv.org/abs/2106.09685)
+- [Medium](https://medium.com/@shelikohan/low-rank-adapter-lora-explained-0d3677395639)
+- [Long LoRA](https://arxiv.org/abs/2309.12307)
+
+## Triton Nvidia Inference Server aka Dynamo-Triton [Triton](https://github.com/triton-inference-server)

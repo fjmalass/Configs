@@ -21,7 +21,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o 
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
 ```
 
-### Add docker repository to apt source
+### Add `docker` repository to apt source
 
 ```bash
 echo \
@@ -65,3 +65,7 @@ sudo systemctl stop docker
 sudo systemctl disable docker.service
 sudo systemctl disable docker.socket
 ```
+
+## Check nvidia docker NGC (Nvidia GPU Cloud) [NGC](https://docs.nvidia.com/ngc/gpu-cloud/ngc-user-guide/index.html)
+
+- 

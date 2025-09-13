@@ -11,3 +11,5 @@ Scraping logs to send to an `OTel` format
 #### Windows
 
 `%PROGRAMFILES\GrafanaLabs\Alloy\config.alloy`
+
+#### Reset

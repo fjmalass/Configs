@@ -234,16 +234,16 @@ b. Download `pyenv`
 `curl -sS https://webi.sh/pyenv | sh`
 
 2. update in `.bashrc`
-```sh
 
+```sh
 # PyENV (from bootdev)
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 ```
-
 3. install python3
+
 ```sh
 pyenv install -v 3.12.2
 pyenv global 3.12.2
