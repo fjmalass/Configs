@@ -66,3 +66,8 @@ Location: `pkg.go.dev`
 - [100 Go Mistakes and How to Avoid Them](https://100go.co)
 - [Lear Go With Tests](https://quii.gitbook.io/learn-go-with-tests)
 
+## Local packages (without `github.com`)
+
+1. Use `go work` aka `workspace`
+
+

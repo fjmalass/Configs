@@ -23,7 +23,6 @@
 
 - Look at `MPEG4-FA` Face Animation
 
-
 ## FineTuning
 
 - Using [`Unsloth`](https://unsloth.ai)
@@ -64,3 +63,17 @@ From [Evaluation of real-time transcriptions using end-to-end ASR models](https:
 - [Long LoRA](https://arxiv.org/abs/2309.12307)
 
 ## Triton Nvidia Inference Server aka Dynamo-Triton [Triton](https://github.com/triton-inference-server)
+
+## OLLama
+
+- Quantization: (Context/Prompts) [`Qwen`]
+  `OLLAMA_FLASH_ATTENTION=true`
+  `OLLAMA_KV_CACHE_TYPE=f16`
+
+- `/set parameter num_ctx 32768` (32k)
+- `/save <Model_name>`
+- `/bye`
+
+- (`macmon`) to check memory
+
+

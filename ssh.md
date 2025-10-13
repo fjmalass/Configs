@@ -54,3 +54,25 @@ Match Group administrators
        AuthorizedKeysFile __PROGRAMDATA__/ssh/administrators_authorized_keys
 ```
 
+
+## SSH and Agent for Windows
+
+- Place the `%USERPROFILE%\.ssh` the private keys and the `config` file
+- Set permissions ```
+icacls <ssh_key> /inhertitance:r
+icacls <ssh_key> /grand:r "%USERNAME%:(F)"
+icacls <ssh_key> /grand:r SYSTEM:(F)"
+```
+
+- As `Administrator`
+  - Install: `choco install openssh`
+  - Use `DISM` `dism /Online /Add-Capability /CapabilityName:OpenSSH.Client~~~~0.0.1.0`
+  - Configure `ssh-agent`
+
+``` bash
+sc config ssh-agent start=auto
+sc start ssh-agent
+```
+
+  - Assign key to agent: `ssh-agent %USER/.ssh/<ssh_key>`, e.g., `ssh-agent USER`
+
