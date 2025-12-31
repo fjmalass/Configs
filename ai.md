@@ -65,7 +65,6 @@ From [Evaluation of real-time transcriptions using end-to-end ASR models](https:
 
 ## Triton Nvidia Inference Server aka Dynamo-Triton [Triton](https://github.com/triton-inference-server)
 
-<<<<<<< HEAD
 ## OLLama
 
 - Quantization: (Context/Prompts) [`Qwen`]
@@ -79,10 +78,8 @@ From [Evaluation of real-time transcriptions using end-to-end ASR models](https:
 - (`macmon`) to check memory
 
 
-=======
 
 ## CONFY and Different Checkpoints/LORA etc.
 
 - [ComfyUI](https://www.comfy.org)
 - [Youtube Tutorial](https://www.youtube.com/watch?v=Yk8aS233HP0)
->>>>>>> fcd8c7b (ai: comfyui)
