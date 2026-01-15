@@ -41,24 +41,25 @@ icacls "D:\DeployKeys\id_deploy_omnichannel-unreal-launcher-python" /grant SYSTE
 ```
 
 ### Connecting to windows from remote
-1. Check the location of the (public) keys with 
+1. Check the location of the (public) keys with
 
 ```powershell
 Get-Content C:\ProgramData\ssh\sshd_config | Select-String -Pattern "PubkeyAuthentication|AuthorizedKeysFile|PasswordAuthentication"
 ```
 
-1. if the account (Archer) is administrator: place  in `c:\ProgramData\ssh\sshd_config` as we have 
+1. if the account (Archer) is administrator: place  in `c:\ProgramData\ssh\sshd_config` as we have
 
 ```toml
 Match Group administrators
        AuthorizedKeysFile __PROGRAMDATA__/ssh/administrators_authorized_keys
 ```
 
-
 ## SSH and Agent for Windows
 
 - Place the `%USERPROFILE%\.ssh` the private keys and the `config` file
-- Set permissions ```
+- Set permissions
+
+``` bash
 icacls <ssh_key> /inhertitance:r
 icacls <ssh_key> /grand:r "%USERNAME%:(F)"
 icacls <ssh_key> /grand:r SYSTEM:(F)"
@@ -73,6 +74,5 @@ icacls <ssh_key> /grand:r SYSTEM:(F)"
 sc config ssh-agent start=auto
 sc start ssh-agent
 ```
-
   - Assign key to agent: `ssh-agent %USER/.ssh/<ssh_key>`, e.g., `ssh-agent USER`
-
+  - Add openssh to git `git config --global core.sshCommand c:/Windows/System32/OpenSSH/ssh.exe`
